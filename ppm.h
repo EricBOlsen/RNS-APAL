@@ -6,6 +6,7 @@ using std::vector;
 #include <iostream>
 #include <string>
 #include "config.h"
+#include "init.h"
 #include "utilities.h"
 
 using namespace std;
@@ -31,6 +32,7 @@ class MRN;		// use this instead of mrn.h to solve the circular reference problem
 #define TRUE	1
 #define FALSE	0
 
+
 enum COUNTERS {DIV_COUNT, SUB_COUNT, ADD_COUNT, MULT_COUNT, DEC_COUNT, LOOP_COUNT, BASE_EXTEND, EXTEND_CLK, COMPARE_COUNT, COMPARE_CLK, ADJUST_TYPE, TOTAL_CLK};
 
 
@@ -41,7 +43,7 @@ class ModTable {
 
 public:
 
-	ModTable::ModTable(int mode);		// constructor
+	ModTable::ModTable(int mode, int rountine, int num_digs, int num_frac_digs, int* modulus, const int* num_powers);		// constructor
 
 	static int ModTableInit;
 	static vector<vector<vector<short>>> arrayDivTbl;
@@ -61,10 +63,24 @@ public:
 	static int GetAutoDigitMod(int index, int &pwr, int q);		// returns the initializing digit modulus using automatically generated modulus
 															// which is the largest power that fits into the largest primes number digit width
 
-	static int GetMaxDigWidth(long long &maxdigit);
+	static int GetMaxDigWidth(long long &maxdigit, int req_num_digs);
+
+	static int returnNumDigits(void);
+	static int returnNumFracDigits(void);
+	static int returnMode(void);
+	static int returnRoutine(void);
 
 private:
+
+	static int req_num_digs;			// this is passed in to ModTable, and then it's stored here
+	static int req_num_frac_digs;       // this is passed in to Modtable, and then stored here
+	static int req_num_ppm_digs;
+	static int req_mode;				  
+	static int req_routine;
 	
+
+	vector<int> req_modulus;			// requested modulus array that has been copied into this class
+	vector<int> req_powers;				// requested power array
 
 };
 

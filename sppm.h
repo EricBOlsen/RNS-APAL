@@ -28,6 +28,7 @@ protected:
 public:
 
 	SPPM(__int64 x);		// constructor, creates a signed integer using a magnitude and sign flag
+	SPPM(SPPM* copyval, __int64 x);		// constructor, creates a signed integer using a modulus structure copied from SPPM* copyval
 	SPPM::~SPPM(void);
 	
 	int SignValid;			// flag to signify if the sign flag is valid or not

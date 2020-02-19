@@ -1,106 +1,38 @@
-//  This Software is the sole property of Digital System Research, Inc
-//  Copyright (c) 2016, Digital System Research, Inc
-//  All Rights Reserved, except as granted in the license/permission statement below:
+//	Project:						RNS-APAL
+//	Authors:						Eric B. Olsen, Rakivaea Kvitting
+//	Link to repository:				https ://github.com/MaitrixLLC/RNS-APAL
+//	Link to CC BY-NC-SA license:	https ://creativecommons.org/licenses/by-nc-sa/4.0/
 //
-//  Digital System Research grants a public license for the use of this source code and binaries
-//  specifically for use in Institutional and Non-institutional Educational, Research, Private, and other Non-commerical purposes only.  
-//	This license does not grant any other license stated or implied.
-//
-//  Here is the license you agree to if you use or download this software:
-//
-//  RNS-APAL V0.1 - Terms and conditions
-//1.	Preamble: This Agreement governs the relationship between you, the user, a private person or public educational entity, 
-//		(hereinafter: Licensee) and Digital System Research Inc, a duly registered company in whose principal place of business is 1000 N. GreenValley Pkwy, #440-348, 
-//		Henderson (hereinafter: Licensor). This Agreement sets the terms, rights, restrictions and obligations on using RNS-APAL V0.1 (hereinafter: The Software) 
-//		created and owned by Licensor, as detailed herein
-//2.	License Grant: Licensor hereby grants Licensee a Non-assignable, Non-transferable, Perpetual, Non-commercial & Non-exclusive license, 
-//		all in accordance with the terms set forth and other legal restrictions set forth in 3rd party software used while running Software.
-//	a.	Limited: Licensee may use Software for the purpose of:
-//		1.	Running Software on Licensee’s Computer[s], Website[s] and Server[s];
-//		2.	Allowing 3rd Parties to run Software on Licensee’s Computer[s], Website[s] and Server[s];
-//		3.	Publishing Software’s output to Licensee and 3rd Parties;
-//		4.	Distribute verbatim copies of Software’s output (including compiled binaries);
-//		5.	Modify Software to suit Licensee’s needs and specifications.
-//	b.	Non Assignable & Non-Transferable: Licensee may not assign or transfer their rights and duties under this license.
-//	c.	Non-Commercial: Licensee may not use Software for commercial purposes. For the purpose of this license, commercial purposes means that a 3rd party has to pay 
-//		in order to access Software or that the Website that runs Software is behind a paywall.  
-//	d.	Including the right to Distribute Derivative Works: Licensee may create and distribute derivative works in binary format based on Software, including amending Software’s 
-//		source code, modifying it, integrating it into a larger work or removing portions of Software, as long as credit to the Licensor is granted and that redistribution is 
-//		made under the terms of this license.
-//	e.	Including the right to Distribute and Disclose Source Code: Licensee may create copies of and distribute copies of the Software source code for the purpose of educational 
-//		and research purposes only.
-//	f.	With Attribution Requirements: Software, including binaries and source code, shall be provided with attribution to Digital System Research, Inc and its authors.
-//	g.	[Multi-]Site: Licensee may use Software on unlimited Computer[s], server[s] and unlimited website[s], for Licensee’s computer[s], server[s] and website[s] only.
-//	h.  No Grant of Additional Rights: This agreement does not grant any additional rights, stated or implied, nor does it constitute any agreement for future 
-//		business relationship with licensee.  This agreement does not grant the user any rights under the licensees patents or other IP.
-//3.	Term & Termination: The Term of this license shall be until terminated. This agreement may also be terminated by Licensor for material breach of this agreement by 
-//		written notice. In the event that licensee must indemnify Licensor as in Section 10, the licensor has the right to terminate this license to cure any breach of any third party;  
-//		in such event the Licensor terminates the agreement, the licensee agrees to act in a reasonable manner to help cure such breach. Upon written notification of termination, 
-//		the licensee agrees to terminate the execution of any program running any portion of the Software on any of their computer[s], server[s] and website[s] within 10 days of 
-//		receiving such written notice.  Licensor may also terminate this Agreement, including Licensee’s license in the case where Licensee : 
-//	a.	became insolvent or otherwise entered into any liquidation process; or
-//	b.	exported Software to any jurisdiction where licensor may not enforce his rights under this agreements in; or
-//	c.	Licensee was in breach of any of this license's terms and conditions and such breach was not cured, immediately upon notification; or
-//	d.	Licensee in breach of any of the terms of clause 2 to this license; or
-//	e.	Licensee otherwise entered into any arrangement which caused Licensor to be unable to enforce his rights under this License.
-//4.	Payment: In consideration of the License granted under clause 2, Licensee shall pay Licensor a one time fee of $0.00, via Credit-Card, PayPal or any other mean which Licensor 
-//		may deem adequate. Failure to perform payment shall construe as material breach of this Agreement. 
-//5.	Upgrades, Updates and Fixes: Licensor may provide Licensee, from time to time, with Upgrades, Updates or Fixes, as detailed herein and according to his sole discretion. 
-//		Licensee hereby warrants to keep The Software up-to-date and install all relevant updates and fixes, and may, at his sole discretion, purchase upgrades, according to the 
-//		rates set by Licensor. Licensor shall provide any update or Fix free of charge; however, nothing in this Agreement shall require Licensor to provide Updates or Fixes.
-//	a.	Upgrades: for the purpose of this license, an Upgrade shall be a material amendment in The Software, which contains new features and or major performance improvements 
-//		and shall be marked as a new version number. For example, should Licensee purchase The Software under version 1.X.X, an upgrade shall commence under number 2.0.0.
-//	b.	Updates: for the purpose of this license, an update shall be a minor amendment in The Software, which may contain new features or minor improvements and shall be marked 
-//		as a new sub-version number. For example, should Licensee purchase The Software under version 1.1.X, an upgrade shall commence under number 1.2.0.
-//	c.	Fix: for the purpose of this license, a fix shall be a minor amendment in The Software, intended to remove bugs or alter minor features which impair the The Software's 
-//		functionality. A fix shall be marked as a new sub-sub-version number. For example, should Licensee purchase Software under version 1.1.1, an upgrade shall commence under 
-//		number 1.1.2.
-//6.	Support: Software is provided under an AS-IS basis and without any support, updates or maintenance. Nothing in this Agreement shall require Licensor to provide Licensee 
-//		with support or fixes to any bug, failure, mis-performance or other defect in The Software.
-//	a.	Bug Notification: Licensee may provide Licensor of details regarding any bug, defect or failure in The Software promptly and with no delay from such event; Licensee 
-//		shall comply with Licensor's request for information regarding bugs, defects or failures and furnish him with information, screenshots and try to reproduce such bugs, 
-//		defects or failures.
-//	b.	Feature Request: Licensee may request additional features in Software, provided, however, that (i) Licensee shall waive any claim or right in such feature should feature 
-//		be developed by Licensor; (ii) Licensee shall be prohibited from developing the feature, or disclose such feature request, or feature, to any 3rd party directly competing 
-//		with Licensor or any 3rd party which may be, following the development of such feature, in direct competition with Licensor; (iii) Licensee warrants that feature does not 
-//		infringe any 3rd party patent, trademark, trade-secret or any other intellectual property right; and (iv) Licensee developed, envisioned or created the feature solely by himself.
-//7.	Liability:  To the extent permitted under Law, The Software is provided under an AS-IS basis. Licensor shall never, and without any limit, be liable for any damage, cost, 
-//		expense or any other payment incurred by Licensee as a result of Software’s actions, failure, bugs and/or any other interaction between The Software  and Licensee’s 
-//		end-equipment, computers, other software or any 3rd party, end-equipment, computer or services.  Moreover, Licensor shall never be liable for any defect in source code 
-//		written by Licensee when relying on The Software or using The Software’s source code.
-//8.	Warranty:  
-//	a.	Intellectual Property: Licensor hereby warrants that The Software does not violate or infringe any 3rd party claims in regards to intellectual property, patents and/or 
-//		trademarks and that to the best of its knowledge no legal action has been taken against it for any infringement or violation of any 3rd party intellectual property rights.
-//	b.	No-Warranty: The Software is provided without any warranty; Licensor hereby disclaims any warranty that The Software shall be error free, without defects or code which may 
-//		cause damage to Licensee’s computers or to Licensee, and that Software shall be functional. Licensee shall be solely liable to any damage, defect or loss incurred as a 
-//		result of operating software and undertake the risks contained in running The Software on License’s Server[s] and Website[s].
-//	c.	Prior Inspection: Licensee hereby states that he inspected The Software thoroughly and found it satisfactory and adequate to his needs, that it does not interfere with 
-//		his regular operation and that it does meet the standards and scope of his computer systems and architecture. Licensee found that The Software interacts with his 
-//		development, website and server environment and that it does not infringe any of End User License Agreement of any software Licensee may use in performing his services. 
-//		Licensee hereby waives any claims regarding The Software's incompatibility, performance, results and features, and warrants that he inspected the The Software.
-//9.	No Refunds: Licensee warrants that they have inspected The Software according to clause 8(c) and that it is adequate to their needs. Accordingly, as The Software is intangible 
-//		goods, Licensee shall not be, ever, entitled to any refund, rebate, compensation or restitution for any reason whatsoever, even if The Software contains material flaws.
-//10.	Indemnification: Licensee hereby warrants to hold Licensor harmless and indemnify Licensor for any lawsuit brought against it in regards to Licensee’s use of The Software 
-//		in means that violate, breach or otherwise circumvent this license, Licensor's intellectual property rights or Licensor's title in The Software. Licensor shall promptly 
-//		notify Licensee in case of such legal action and request Licensee’s consent prior to any settlement in relation to such lawsuit or claim.
-//11.	Governing Law, Jurisdiction: Licensee hereby agrees not to initiate class-action lawsuits against Licensor in relation to this license and to compensate Licensor 
-//		for any legal fees, cost or attorney fees should any claim brought by Licensee against Licensor be denied, in part or in full.  This agreement shall be enforced by the laws 
-//		of the State of Nevada, USA.
-//
-//
-//		Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
+//	RNS-APAL is protected under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License
 //	
-//							V0.101:	June 6, Added license text
-//							V0.102: June 7, 2016, Fixed SPPM::Prints() method to properly check sign flags same as Print() method
-//							V0.105: October 22, 2017, Added full MOD to PPMDigit::Sub function, helps stabilize library for software testing
-//													re-organized config.h and config.cpp for easier user adjustment of configuration with much less crashes,
-//													added PPM::Div6 and PPM::Div7 as experiemental divide routines that exhibit less cycles,
-//													added extended Euclidean routine as default option for inverse multiplication,  
-//													continues to support LUT methods for inverse multiplication as user settable option
-//							V0.106:	October 25, 2017, Added a define to set the default console width.  Located in "config.h", good for Win10 console which is wider, and much better.
-//							V0.107: December 31, 2019, Modified print demo routine for future expansion.
+//	You are free to:
+//	Share — copy and redistribute the material in any medium or format.
+//	Adapt — remix, transform, and build upon the material.
 //
+//	The licensor cannot revoke these freedoms as long as you follow the license terms.
 //
+//	Under the following terms:
+//	Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
+//				  the licensor endorses you or your use.
+//	Non Commercial — You may not use the material for commercial purposes.
+//	Share Alike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+//	No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+//
+//	Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
+//	
+//						V0.101:	June 6, Added license text
+//						V0.102: June 7, 2016, Fixed SPPM::Prints() method to properly check sign flags same as Print() method
+//						V0.103: June 8, 2016, Fixed SPMF::Prints() method and fixed Sqrt() method to pass back error code
+//						V0.104: July 17, 2016, Added return codes for certain Assign functions, added void PPM constructor,
+//												and modified demo routine to provide better operation and explanation, including adding product summation ex.
+//						V0.105: October 22, 2017, Added full MOD to PPMDigit::Sub function, helps stabilize library for software testing
+//												re-organized config.h and config.cpp for easier user adjustment of configuration with much less crashes,
+//												added PPM::Div6 and PPM::Div7 as experiemental divide routines that exhibit less cycles,
+//												added extended Euclidean routine as default option for inverse multiplication,  
+//												continues to support LUT methods for inverse multiplication as user settable option
+//						V0.106:	October 25, 2017, Added a define to set the default console width.  Located in "config.h", good for Win10 console which is wider, and much better.
+//						V0.107: December 31, 2019, Modified print demo routine for future expansion.
+//						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
 #include "stdafx.h"
 #include "stdio.h"
@@ -129,24 +61,49 @@ vector<vector<vector<short>>> ModTable::arrayDivTbl;	// this is a brute force di
 vector<vector<vector<short>>> ModTable::ModDivTbl;		// this is a more efficient version of ModDiv LUT, array[p][pwr][P], where p = number of modulus, pwr = powers of modulus, P = largest digit modulus 
 														// the multiplicative inverse for modulus p with respect to any modulus m --> array[p][pwr][m]
 int ModTable::q;
+int ModTable::req_num_digs;
+int ModTable::req_num_frac_digs;
+int ModTable::req_mode;
+int ModTable::req_routine;
 
 // Init the Prime numbers and other LUT static members here
-ModTable::ModTable(int mode) 
+ModTable::ModTable(int mode, int routine, int num_digs, int num_frac_digs, int *modulus, const int *num_powers) 
 {
 int i, pwr;
 long long maxdigit;
+	
+	req_mode = mode;
 
+	req_routine = routine;
+	req_num_digs = num_digs;
+	req_num_frac_digs = num_frac_digs;
+	req_modulus.resize(req_num_digs);
+	req_powers.resize(req_num_digs);	// NOTE: this array is now forced to be same size as modulus array
 
+	if ((mode & CUSTOM) && (mode & NO_POWERS)) {
+		for (i = 0; i < req_num_digs; i++) {
+
+			req_modulus[i] = modulus[i];
+
+		}
+	}
+	else if (mode & CUSTOM) {
+		for (i = 0; i < req_num_digs; i++) {
+			req_modulus[i] = modulus[i];
+			req_powers[i] = num_powers[i];
+		}
+	}
+	
 
 //	wait_key();
 
 	if(!this->ModTableInit) {				// prime array is first!
-		primes = new int[NUM_PPM_DIGS];
-		if(mode == 0) {                             // If NOT using CUSTOM_MODULUS, then generate the primes in sequence
-			init_prime(primes, NUM_PPM_DIGS);
+		primes = new int[req_num_digs];
+		if(!(req_mode & CUSTOM)) {                             // If NOT using CUSTOM_MODULUS, then generate the primes in sequence
+			init_prime(primes, req_num_digs);
 		}
-		else if(mode == 1) {                        // else, if using CUSTOM_MODULUS, then generate the primes using "modulus[]" array
-			for(i=0; i< NUM_PPM_DIGS; i++) {
+		else if(req_mode & CUSTOM) {                        // else, if using CUSTOM_MODULUS, then generate the primes using "modulus[]" array
+			for(i=0; i< req_num_digs; i++) {
 				primes[i] = modulus[i];
 			}
 		}
@@ -162,161 +119,119 @@ long long maxdigit;
 		this->ModTableInit = 1;
 		BaseClass = 1;						// this is the base class, the class that instantiated static configuration variables
 
-		q = GetMaxDigWidth(maxdigit);			// assign the q value of the RNS system (largest digit width in bits)
+		q = GetMaxDigWidth(maxdigit, req_num_digs);			// assign the q value of the RNS system (largest digit width in bits)
 		unsigned int m = maxdigit;
 		
 		cout << "Q = " << q << ", LUT Adr Range = " << maxdigit;
 
-#ifdef USE_MODDIV_LUT								// THIS LUT ROUTINE DOES NOT WORK WITH SIMPLE PRINTDEMOPM EXAMPLE IN MANUAL!
+		if (ModTable::returnRoutine() == USE_MODDIV_LUT) {
+			long long size = 0;
 
-	#ifndef USE_BRUTE_LUT								// If NOT #define USE_BRUTE_LUT, then use the more efficient LUT approach
+			ModDivTbl.resize(ModTable::returnNumDigits());
+			for (int i = 0; i < ModDivTbl.size(); i++) {
+				GetDigitMod(i, pwr, q);
+				ModDivTbl[i].resize(pwr);
+				size += pwr * m;
+				for (int j = 0; j < pwr; j++) {
 
-		long long size = 0;
+					ModDivTbl[i][j].resize(m);
 
-		ModDivTbl.resize(NUM_PPM_DIGS);
-		for(int i=0; i<ModDivTbl.size(); i++) {
-			GetDigitMod(i, pwr, q);
-			ModDivTbl[i].resize(pwr);
-			size += pwr * m;
-			for(int j=0; j<pwr; j++) {
-
-				ModDivTbl[i][j].resize(m);
-
-			}
-		}
-
-		printf("Smaller LUT memory allocation: %ul bytes\n", size/sizeof(short));
-
-		for(int i=0; i<ModDivTbl.size(); i++) {
-			for(int j=0; j<ModDivTbl[i].size(); j++) {
-				for(int k=0; k<ModDivTbl[i][j].size(); k++) {
-
-					ModDivTbl[i][j][k] = -1;			// invalidate all entries first
 				}
 			}
-		}
 
-		for(int i=0; i<ModDivTbl.size(); i++) {        // there are m entries in p index, but we only fill the primes right now
-			for(int p=0; p<ModDivTbl[i].size(); p++) {
-				int pmod = power(primes[i], p+1);
-				for(int j=0; j<ModDivTbl[i][p].size(); j++) {				// this is the modulus that is "with respect to" (ALL POWERS)
+			//printf("Smaller LUT memory allocation: %lu bytes\n", size / sizeof(short));
+			cout << "Smaller LUT memory allocation: " << size / sizeof(short) << " bytes" << endl;
+			for (int i = 0; i < ModDivTbl.size(); i++) {
+				for (int j = 0; j < ModDivTbl[i].size(); j++) {
+					for (int k = 0; k < ModDivTbl[i][j].size(); k++) {
 
-					int resp_mod = j;
-					int trial = -1;
-					int k = 0;
-					for(k=0; k<m; k++) {
-
-						trial = (resp_mod * k) % pmod;
-						if(trial == 1) break;
-
-					}
-
-					if(trial == 1) {
-						ModDivTbl[i][p][resp_mod] = k;
-	//					printf("inverse of mod %d, power %d, with respect to %d is %d\n", pmod, p, resp_mod, k);
-	//					wait_key();
+						ModDivTbl[i][j][k] = -1;			// invalidate all entries first
 					}
 				}
 			}
-		}
 
-/*  // working two dimensional array case, for non-power based development of this method
-		ModDivTbl.resize(NUM_PPM_DIGS);
-		for(int i=0; i<ModDivTbl.size(); i++) {
-			ModDivTbl[i].resize(m);
-		}
+			for (int i = 0; i < ModDivTbl.size(); i++) {        // there are m entries in p index, but we only fill the primes right now
+				for (int p = 0; p < ModDivTbl[i].size(); p++) {
+					int pmod = power(primes[i], p + 1);
+					for (int j = 0; j < ModDivTbl[i][p].size(); j++) {				// this is the modulus that is "with respect to" (ALL POWERS)
 
-		for(int i=0; i<ModDivTbl.size(); i++) {
-			for(int j=0; j<ModDivTbl[i].size(); j++) {
+						int resp_mod = j;
+						int trial = -1;
+						int k = 0;
+						for (k = 0; k < m; k++) {
 
-				ModDivTbl[i][j] = -1;		// invalidate all entries first
-			}
-		}
+							trial = (resp_mod * k) % pmod;
+							if (trial == 1) break;
 
-		for(int i=0; i<ModDivTbl.size(); i++) {        // there are m entries in p index, but we only fill the primes right now
-			int pmod = GetDigitMod(i, pwr, q);		   // get the largest power prime modulus, also return powers
-
-			for(int j=0; j<NUM_PPM_DIGS; j++) {    // this is the modulus that is "with respect to"
-
-				int resp_mod = GetDigitMod(j, pwr, q);
-				int trial = -1;
-				int k = 0;
-				for(k=0; k<m; k++) {
-
-					trial = (resp_mod * k) % pmod;
-					if(trial == 1) break;
-
-				}
-
-				if(trial == 1) {
-//					ModDivTbl[pmod][resp_mod] = k;
-					ModDivTbl[i][resp_mod] = k;
-//					printf("inverse of mod %d with respect to %d is %d\n", pmod, resp_mod, k);
-//					wait_key();
-				}
-			}
-		}
-*/
-
-	#else
-
-		long long size = 0;
-	// allocate storage for massive three dimensional array
-		arrayDivTbl.resize(NUM_PPM_DIGS);
-		for(int i=0; i<NUM_PPM_DIGS; i++) {
-			arrayDivTbl[i].resize(m);
-
-			for (int j = 0; j < m; j++) {
-				arrayDivTbl[i][j].resize(m);
-				size += m * NUM_PPM_DIGS;
-			}
-		}
-
-		printf("Brute force LUT memory allocation: %ul bytes\n", size / sizeof(short));
-
-		for(int i=0; i<arrayDivTbl.size(); i++) {
-			for(int j=0; j<arrayDivTbl[i].size(); j++) {
-				for(int k=0; k<arrayDivTbl[i][j].size(); k++) {
-
-					arrayDivTbl[i][j][k] = -1;		// invalidate all entries first
-
-				}
-			}
-		}
-
-
-		for(int i=0; i<arrayDivTbl.size(); i++) {
-
-			for(int j=0; j<GetDigitMod(i, pwr, q); j++) {
-				for(int k=0; k<GetDigitMod(i, pwr, q); k++) {
-
-					if(int temp = (j*k)%GetDigitMod(i, pwr, q)) {		// if non zero ...
-
-						arrayDivTbl[i][temp][j] = k;
-					}
-					else {								// zero cases... 
-						if(j) {					 
-
-							arrayDivTbl[i][temp][j] = 0;
 						}
-						else {							
 
-							arrayDivTbl[i][temp][j] = 0;
+						if (trial == 1) {
+							ModDivTbl[i][p][resp_mod] = k;
+							//					printf("inverse of mod %d, power %d, with respect to %d is %d\n", pmod, p, resp_mod, k);
+							//					wait_key();
+						}
+					}
+				}
+			}
+
+		}
+		else if (ModTable::returnRoutine() & USE_BRUTE_LUT) {
+			long long size = 0;
+			// allocate storage for massive three dimensional array
+			arrayDivTbl.resize(ModTable::returnNumDigits());
+			for (int i = 0; i < ModTable::returnNumDigits(); i++) {
+				arrayDivTbl[i].resize(m);
+
+				for (int j = 0; j < m; j++) {
+					arrayDivTbl[i][j].resize(m);
+					size += m * ModTable::returnNumDigits();
+				}
+			}
+
+			cout << "Brute force LUT memory allocation: " << size / sizeof(short) << " bytes" << endl;
+
+			for (int i = 0; i < arrayDivTbl.size(); i++) {
+				for (int j = 0; j < arrayDivTbl[i].size(); j++) {
+					for (int k = 0; k < arrayDivTbl[i][j].size(); k++) {
+
+						arrayDivTbl[i][j][k] = -1;		// invalidate all entries first
+
+					}
+				}
+			}
+
+
+			for (int i = 0; i < arrayDivTbl.size(); i++) {
+
+				for (int j = 0; j < GetDigitMod(i, pwr, q); j++) {
+					for (int k = 0; k < GetDigitMod(i, pwr, q); k++) {
+
+						if (int temp = (j * k) % GetDigitMod(i, pwr, q)) {		// if non zero ...
+
+							arrayDivTbl[i][temp][j] = k;
+						}
+						else {								// zero cases... 
+							if (j) {
+
+								arrayDivTbl[i][temp][j] = 0;
+							}
+							else {
+
+								arrayDivTbl[i][temp][j] = 0;
+							}
 						}
 					}
 				}
 			}
 		}
-	#endif
+		else {				// Use Extended Euclidean
+			cout << "No LUT memory allocation: using extended Euclidean" << endl;
+		}
 
-#else
-	printf("No LUT memory allocation: using extended Euclidean\n");
-#endif
-		
 	}
-	else {
-		BaseClass = 0;									// this is not the base class
-	}
+//	else {
+//		BaseClass = 0;									// this is not the base class
+//	}
 
 // Post static intialization initialzations!
 	
@@ -326,18 +241,26 @@ long long maxdigit;
 // one of three versions is called depending on the value assigned to #define CUSTOM_POWERS and the #define NO_POWERS
 int ModTable::GetDigitMod(int index, int &pwr, int q)
 {
-int mode = CUSTOM_POWERS;
+int mode = ModTable::returnMode();
 
-	if(mode) {
+	if((mode & CUSTOM) && !(mode & NO_POWERS)) {
 		return(GetCustDigitMod(index, pwr));
 	}
 	else {
-#ifdef NO_POWERS
-		pwr = 1;
-		return(primes[index]);
-#else
-		return(GetAutoDigitMod(index, pwr, q));
-#endif
+		
+		if (mode & NO_POWERS) { 
+			pwr = 1;
+			return(primes[index]);
+		}
+		else
+			return(GetAutoDigitMod(index, pwr, q));
+		
+//#ifdef NO_POWERS
+//		pwr = 1;
+//		return(primes[index]);
+//#else
+//		return(GetAutoDigitMod(index, pwr, q));
+//#endif
 		
 	}
 
@@ -390,17 +313,17 @@ int temp_width;
 
 // This function returns the correct maximum width (Q) of the power based RNS system
 // and it's power of two via the maxdigit argument
-int ModTable::GetMaxDigWidth(long long &maxdigit)
+int ModTable::GetMaxDigWidth(long long &maxdigit, int req_num_digs)
 {
 int i, mod, pwr, binwidth;
 long long digwidth;
-int mode = CUSTOM_POWERS;
+int mode = ModTable::returnMode();
 
 	maxdigit = 0;
 	binwidth = 0;
 
-	if(mode) {
-		for(i=0; i< NUM_PPM_DIGS; i++) {
+	if(mode & CUSTOM) {
+		for(i=0; i< req_num_digs; i++) {
 		
 			mod = GetCustDigitMod(i, pwr);
 			binwidth = BinaryWidth(mod, digwidth);
@@ -412,7 +335,7 @@ int mode = CUSTOM_POWERS;
 		}
 	}
 	else {
-		for(i=0; i< NUM_PPM_DIGS; i++) {
+		for(i=0; i< req_num_digs; i++) {
 		
 			mod = primes[i];
 			binwidth = BinaryWidth(mod, digwidth);
@@ -428,6 +351,42 @@ int mode = CUSTOM_POWERS;
 
 }
 
+int ModTable::returnNumDigits(void)
+{
+
+	return req_num_digs;
+
+}
+int ModTable::returnNumFracDigits(void)
+{
+
+	return req_num_frac_digs;
+
+}
+
+int ModTable::returnMode(void)
+{
+
+	return req_mode;
+
+}
+
+
+int ModTable::returnRoutine(void)
+{
+
+	return req_routine;
+
+}
+
+//int ModTable::returnPrintRemainder(void)
+//{
+//
+//	return req_print_remainder;
+//
+//}
+// ***************************************  PPM CLASS BELOW  **********************************
+
 // this is the primary constructor for the PPM class
 PPM::PPM(__int64 x)
 {
@@ -435,7 +394,7 @@ int power;
 	
 	if(x < 0) x = -x;		// need absolute value to support signed SPPM2 as derived
 
-	NumDigits = NUM_PPM_DIGS;	
+	NumDigits = ModTable::returnNumDigits();	
 	PowerBased = 0;					// start with assumption that class is NOT power based
 	
 	Mod2_index = INVALID_MODULUS;		// start with "invalid modulus" for 2 and 5 modulus index
@@ -512,7 +471,7 @@ PPM::PPM(void)
 	
 //	if(x < 0) x = -x;		// need absolute value to support signed SPPM2 as derived
 
-	NumDigits = NUM_PPM_DIGS;	
+	NumDigits = ModTable::returnNumDigits();	
 	PowerBased = 0;					// start with assumption that class is NOT power based
 	
 	Mod2_index = INVALID_MODULUS;		// start with "invalid modulus" for 2 and 5 modulus index
@@ -726,21 +685,22 @@ void PPM::PrintDemo(void)
 	unsigned int len = 0;
 	unsigned int temp_len, maxwidth, size, k, last_i;
 	string hdr = "";
-	int digsize[NUM_PPM_DIGS];
+	vector<int> digsize(NumDigits);
+	//int digsize[NUM_PPM_DIGS]; 1/9/20 replaced with a vector in order to initialize digsize with size NumDigits
 
 	int radix = 10;																// CHANGE THE RADIX VALUES HERE
 	int hdr_radix = 10;
 
 	last_i = 0;
 
-	size = NUM_PPM_DIGS - 1;													// find the width of the largest possible digit, assumes last digit is at least size of largest digit in digit width
+	size = NumDigits - 1;													// find the width of the largest possible digit, assumes last digit is at least size of largest digit in digit width
 	string digit = to_string(Rn[size]->GetFullPowMod());						// we assume last digit is largest modulus
 
 	maxwidth = digit.length() + 1; 
 
 	while (!done) {
 
-		while ((i < Rn.size()) && (len < (CONSOLE_WIDTH - maxwidth))) {          // print modulus header
+		while ((i < Rn.size()) && (len < (console_width - maxwidth))) {          // print modulus header
 
 			if (Rn[i]->PowerValid == 0) {										// testing the print radix feature using active modulus
 				digit = to_string(Rn[i]->GetFullPowMod());
@@ -963,20 +923,23 @@ void PPM::PrintDemo(int radix)
 	unsigned int len = 0;
 	unsigned int temp_len, maxwidth, size, k, last_i;
 	string hdr = "";
-	int digsize[NUM_PPM_DIGS];
+
+	vector<int> digsize(NumDigits);
+	//int digsize[NUM_PPM_DIGS]; 1/9/20 replaced with a vector in order to initialize digsize with size NumDigits
+
 	string digit = ""; 
 
 	int hdr_radix = radix;
 
 	last_i = 0;
 
-	size = NUM_PPM_DIGS - 1;							// find the width of the largest possible digit, assumes last digit is at least size of largest digit in digit width
+	size = NumDigits - 1;							// find the width of the largest possible digit, assumes last digit is at least size of largest digit in digit width
 	digit = my_to_string(Rn[size]->GetFullPowMod(), hdr_radix);
 	maxwidth = digit.length() + 1; 
 
 	while (!done) {
 
-		while ((i < Rn.size()) && (len < (CONSOLE_WIDTH - maxwidth))) {           // print modulus header
+		while ((i < Rn.size()) && (len < (console_width - maxwidth))) {           // print modulus header
 
 			if (Rn[i]->PowerValid == 0) {
 				digit = my_to_string(Rn[i]->GetFullPowMod(), hdr_radix); // testing the print radix feature using active modulus
@@ -1173,7 +1136,8 @@ void PPM::PrintDemoPM(int radix)
 
 	string hdr = ""; 
 
-	int digsize[NUM_PPM_DIGS];
+	vector<int> digsize(NumDigits);
+	//int digsize[NUM_PPM_DIGS]; 1/9/20 replaced with a vector in order to initialize digsize with size NumDigits
 
 	string digit = ""; 
 
@@ -1182,7 +1146,7 @@ void PPM::PrintDemoPM(int radix)
 
 	int hdr_radix = radix;
 
-	size = NUM_PPM_DIGS - 1;							// find the width of the largest possible digit
+	size = NumDigits - 1;							// find the width of the largest possible digit
 	digit = my_to_string(Rn[size]->GetFullPowMod(), hdr_radix);
 	maxwidth = digit.length(); 
 
@@ -1192,7 +1156,7 @@ void PPM::PrintDemoPM(int radix)
 
 	while (!done) {
 
-		while ((i < Rn.size()) && (len < (CONSOLE_WIDTH - maxwidth))) {           // print modulus header
+		while ((i < Rn.size()) && (len < (console_width - maxwidth))) {           // print modulus header
 
 			if (Rn[i]->PowerValid == 0) {
 				digit = my_to_string(Rn[i]->GetFullPowMod(), hdr_radix); // testing the print radix feature using active modulus
@@ -1346,7 +1310,7 @@ string output;
 
 	}
 	else {
-		printf("Prints(): no such radix supported\n");
+		cout << "Prints(): no such radix supported" << endl;
 	}
 	return(output);
 
@@ -1703,7 +1667,7 @@ std::string s;
 	ppm2->Normalize();
 
 	if(ppm2->Mod2_index == INVALID_MODULUS) {
-		cout << "Error:, Print2() must have a 2 modulus to print" << endl; printf("Error:, Print2() must have a 2 modulus to print\n");
+		cout << "Error:, Print2() must have a 2 modulus to print" << endl;
 	}
 	else if(!ppm2->Zero()) {
 
@@ -2085,15 +2049,15 @@ PPM *temp2 = new PPM(0);
 	clocks += 1;			// start with one from subtractions above
 
 	if(this->IsEqual(ppm)) {
-		printf("even division, clks = %d\r\n", clocks);
+		cout << "even division, clks = " << clocks;
 		return(0);
 	}
 	else if(!temp1->Compare(temp2, clocks)) {
-		printf("type 1 decision, clks=%d ", clocks);
+		cout << "type 1 decision, clks = " << clocks;
 		return(1);
 	}
 	else {
-		printf("type 0 decision, clks=%d ", clocks);
+		cout << "type 0 decision, clks = " << clocks;
 		return(0);
 	}
 
@@ -2346,7 +2310,7 @@ int PPM::ExtendNorm(void)
 int clocks = 0;
 
 	if(!this->IsNormal()) {
-		printf("ERROR: Attempting to extend non-normal value in ExtendNorm method\n");
+		cout << "ERROR: Attempting to extend non-normal value in ExtendNorm method" << endl;
 		wait_key();
 		return(0);
 	}
@@ -2497,7 +2461,7 @@ void PPM::GetMultRange(PPM *val)
 {
 
 	if(Mult_range == NULL) {
-		printf("calculating range\r\n");
+		cout << "calculating range" << endl;
 		val->GetRange(val, UNSIGNED_RANGE);
 		cout << "val = " <<  val->Print10() << endl;
 		
@@ -2552,7 +2516,7 @@ void PPM::Add(PPM *ppm)
 																  // (this represents missing infomration for that digit with respect to base argument)
 		else if(ppm->Rn[i]->PowerValid != Rn[i]->PowerValid) {    // now supporting a stricter policy to ensure the addition is only of same modulus types 
 																 
-			printf("ERROR: PPM::Add - attempting to add incompatible types\n");
+			cout << "ERROR: PPM::Add - attempting to add incompatible types" << endl;
 			wait_key();
 		}
 
@@ -2601,7 +2565,7 @@ void PPM::Sub(PPM *ppm)
 																  // (this represents missing infomration for that digit with respect to base argument)
 		else if(ppm->Rn[i]->PowerValid != Rn[i]->PowerValid) {    // now supporting a stricter policy regarding only subtracting types with same PowerValid modulus structure   
 																
-			printf("ERROR: PPM::Sub - attempting to subtract incompatible types at modulus %d\n", i);
+			cout << "Error PPM::Sub - attempting to subtract incompatible types at modulus " << i << endl;
 			wait_key();
 		}
 
@@ -2651,7 +2615,8 @@ void PPM::Mult(PPM *ppm)
 //		else if(ppm->Rn[i]->PowerValid < Rn[i]->PowerValid) {     // cannot allow the multiplicative argument to have a lower power modulus then base argument
 																  // (this represents missing information for that digit with respect to base argument)
 		else if(ppm->Rn[i]->PowerValid != Rn[i]->PowerValid) {	  // now supporting a stricter policy of only multiplying same types (having same PowerValid settings).
-			printf("ERROR: PPM::Mult - attempting to multiply incompatible types\n");
+			cout << "ERROR: PPM::Mult - attempting to multiply incompatible types" << endl;
+
 			wait_key();
 		}
 
@@ -3077,7 +3042,7 @@ int pwr;
 //	clear_counters();			// clear the counters first
 
 	if(Divisor->Zero()) {	// check for divide by zero, flag error and return
-		printf("ERROR: DIVIDE BY ERROR!\r\n");
+		cout << "ERROR: DIVIDE BY ERROR!" << endl;
 		wait_key();
 		div_done = 1;
 	}
@@ -3097,7 +3062,7 @@ int pwr;
 
 				if(Dividend->Dec_by_next_fact_PM(Divisor, dcnt, prime_index, pwr, NumDigits)) {						
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << " ";	// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
 
@@ -3112,7 +3077,7 @@ int pwr;
 					Dividend->Rn[prime_index]->Skip = 1;	
 					
 //					if(this->ena_dplytrc) printf("%d[]:", ModTable::primes[prime_index]);
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -3125,7 +3090,7 @@ int pwr;
 						numcnt = Dividend->ExtendNorm();
 						Divisor->ExtendNorm();
 
-						if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+						if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 						counter[COUNTERS::BASE_EXTEND] += 1;
 						counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -3150,7 +3115,7 @@ int pwr;
 				numcnt = Dividend->ExtendNorm();
 				Divisor->ExtendNorm();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -3161,14 +3126,14 @@ int pwr;
 //			cout << "\r\nDividend: " << Dividend->Prints() << " = " << Dividend->Print10() << endl;
 //			cout << "Divisor:  " << Divisor->Prints() << " = " << Divisor->Print10() << endl;
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if(this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";			// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 
@@ -3210,7 +3175,7 @@ int pwr;
 					dif->Sub(DividendCopy);			// subtract DividendCopy from dif (creates the real difference)		
 					counter[COUNTERS::SUB_COUNT] += 1;
 
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //					printf("dif = %I64d, dif %.*f percent of DividendCopy", dif->decimal3(), 5, (float) dif->decimal3()/(float) DividendCopy->decimal3()*100.0);
 //					printf("\r\n");
 
@@ -3224,7 +3189,7 @@ int pwr;
 					counter[COUNTERS::LOOP_COUNT] += 1;
 				}
 				else {							// division is now complete ....
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 
 					if(dif->IsEqual(temp)) {	// added this check, in case dif is EQUAL to temp
 						acc->Increment();		// (this case comes about when dividing evenly by large semi primes > PM ?)
@@ -3245,12 +3210,12 @@ int pwr;
 //						cout << "dif= " << dif->Print10() << "  Dividend= " << DividendOrig->Print10() << endl;
 						
 						if(dif->Compare(DividendOrig, clocks)) {	// see if quotient is high by one, if so, adjust ...
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 							acc->Decrement();
 							counter[COUNTERS::DEC_COUNT] += 1;
 						}
 						else {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //							printf(" no adjust ");
 						}
 
@@ -3294,7 +3259,7 @@ int pwr;
 		}		// end if(pm2.divisible_by_pm())
 		else {
 			Divisor->Decrement();
-			if(this->ena_dplytrc) printf("-d ");
+			if (this->ena_dplytrc) cout << "-d ";
 			counter[COUNTERS::DEC_COUNT] += 1;
 		}
 
@@ -3377,7 +3342,7 @@ int pwr;
 //	clear_counters();			// clear the counters first
 
 	if(Divisor->Zero()) {	// check for divide by zero, flag error and return
-		printf("ERROR: DIVIDE BY ERROR!\r\n");
+		cout << "ERROR: DIVIDE BY ERROR!" << endl;
 		wait_key();
 		div_done = 1;
 	}
@@ -3387,11 +3352,11 @@ int pwr;
 		div_done = 1;
 	}
 
-	printf("\n At start: \n");
+	cout << endl << " At start: " << endl;
 	Dividend->PrintDemo();
-	printf("\n");
+	cout << endl;
 	Divisor->PrintDemo();
-	printf("\n");
+	cout << endl;
 	cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 	wait_key();
 
@@ -3405,19 +3370,19 @@ int pwr;
 
 				if(Dividend->Dec_by_next_fact_PM(Divisor, dcnt, prime_index, pwr, NumDigits)) {			// subtracts the dividend by enough to make divisble by mod^pwr			
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << "n ";	// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
-					printf("before divide: \n");
+					cout << "before divide: " << endl;
 					Dividend->PrintDemo();
-					printf("\n");
+					cout << endl;
 					Divisor->PrintDemo();
-					printf("\n");
+					cout << endl;
 					cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 					wait_key();
 
-					printf("divided by: %d", power(ModTable::primes[prime_index], pwr));
-					printf("\n");
+					cout << "divided by: " << power(ModTable::primes[prime_index], pwr);
+					cout << endl;
 
 					Dividend->ModDiv(power(ModTable::primes[prime_index], pwr));
 					Divisor->ModDiv(power(ModTable::primes[prime_index], pwr));
@@ -3428,13 +3393,13 @@ int pwr;
 //					Dividend->Rn[prime_index]->Skip = 1;	
 
 					Dividend->PrintDemo();
-					printf("\n");
+					cout << endl;
 					Divisor->PrintDemo();
-					printf("\n");
+					cout << endl;
 					cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 					wait_key();
 					
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -3444,18 +3409,18 @@ int pwr;
 
 					if(Divisor->AnyPartSkips()) {				// if any pending full skips or partial skips, then perform base extension
 
-						printf("extend 1: \n");
+						cout << "extend 1: "<< endl;
 						numcnt = Dividend->ExtendPart2Norm();
 						Divisor->ExtendPart2Norm();
 
 						Dividend->PrintDemo();
-						printf("\n");
+						cout << endl;
 						Divisor->PrintDemo();
-						printf("\n");
+						cout << endl;
 						cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 						wait_key();
 
-						if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+						if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 						counter[COUNTERS::BASE_EXTEND] += 1;
 						counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -3477,18 +3442,18 @@ int pwr;
 			}								// end of while(!pm2.one()  && (prime_index < NUM_PM_DIGS-1)) {
 
 			if(Divisor->AnyPartSkips()) {
-				printf("extend 2: \n");
+				cout << "extend 2: " << endl;
 				numcnt = Dividend->ExtendPart2Norm();
 				Divisor->ExtendPart2Norm();
 
 				Dividend->PrintDemo();
-				printf("\n");
+				cout << endl;
 				Divisor->PrintDemo();
-				printf("\n");
+				cout << endl;
 				cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 				wait_key();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -3499,17 +3464,17 @@ int pwr;
 //			cout << "\r\nDividend: " << Dividend->Prints() << " = " << Dividend->Print10() << endl;
 //			cout << "Divisor:  " << Divisor->Prints() << " = " << Divisor->Print10() << endl;
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if (this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				printf("divisor is one, or dividend is zero\n");
+				cout << "divisor is one, or dividend is zero" << endl;
 				wait_key();
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 
@@ -3557,7 +3522,7 @@ int pwr;
 					dif->Sub(DividendCopy);			// subtract DividendCopy from dif (creates the real difference)		
 					counter[COUNTERS::SUB_COUNT] += 1;
 
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //					printf("dif = %I64d, dif %.*f percent of DividendCopy", dif->decimal3(), 5, (float) dif->decimal3()/(float) DividendCopy->decimal3()*100.0);
 //					printf("\r\n");
 
@@ -3571,7 +3536,7 @@ int pwr;
 					counter[COUNTERS::LOOP_COUNT] += 1;
 				}
 				else {							// division is now complete ....
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 
 					if(dif->IsEqual(temp)) {	// added this check, in case dif is EQUAL to temp
 						acc->Increment();		// (this case comes about when dividing evenly by large semi primes > PM ?)
@@ -3592,12 +3557,12 @@ int pwr;
 //						cout << "dif= " << dif->Print10() << "  Dividend= " << DividendOrig->Print10() << endl;
 						
 						if(dif->Compare(DividendOrig, clocks)) {	// see if quotient is high by one, if so, adjust ...
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 							acc->Decrement();
 							counter[COUNTERS::DEC_COUNT] += 1;
 						}
 						else {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //							printf(" no adjust ");
 						}
 
@@ -3643,15 +3608,15 @@ int pwr;
 
 			Divisor->Decrement();
 			
-			printf("divisor decremented by 1: \n");
+			cout << "divisor decremented by 1: " << endl;
 			Dividend->PrintDemo();
-			printf("\n");
+			cout << endl;
 			Divisor->PrintDemo();
-			printf("\n");
+			cout << endl;
 			cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 			wait_key();
 			
-			if(this->ena_dplytrc) printf("-d ");
+			if (this->ena_dplytrc) cout << "-d ";
 			counter[COUNTERS::DEC_COUNT] += 1;
 		}
 
@@ -3769,7 +3734,7 @@ int zero;
 
 				if(Dividend->Dec_by_next_fact_PM(Divisor, dcnt, prime_index, pwr, NumDigits)) {			// subtracts the dividend by enough to make divisble by mod^pwr			
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << "n ";	// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
 					Dividend->ModDiv(power(ModTable::primes[prime_index], pwr));
@@ -3777,7 +3742,7 @@ int zero;
 
 					counter[COUNTERS::DIV_COUNT] += 1;			// two divides above count as one clock, done in paralell
 					
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -3790,7 +3755,7 @@ int zero;
 						numcnt = Dividend->ExtendPart2Norm();
 						Divisor->ExtendPart2Norm();
 
-						if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+						if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 						counter[COUNTERS::BASE_EXTEND] += 1;
 						counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -3813,21 +3778,21 @@ int zero;
 				numcnt = Dividend->ExtendPart2Norm();
 				Divisor->ExtendPart2Norm();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if(this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
 			}
 
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if (this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 				acc->Add(Dividend);			// acc += result
@@ -3849,7 +3814,7 @@ int zero;
 
 				if(!Dividend->Zero() && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {		// if dif >= DivisorOrig then .....
 					
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 
 					DividendCopy->Assign(dif);		// set up DividendCopy for next iteration
 					Dividend->Assign(dif);			// set up Dividend register for next iteration
@@ -3859,7 +3824,7 @@ int zero;
 					counter[COUNTERS::LOOP_COUNT] += 1;
 				}
 				else {							// division is now complete ....
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl; 
 												// This is the post accum adjustment part
 					if(dif->IsEqual(temp)) {	// added this check, in case dif is EQUAL to temp
 						acc->Increment();		// (this case comes about when dividing evenly by large semi primes > PM ?)
@@ -3876,12 +3841,12 @@ int zero;
 						counter[COUNTERS::COMPARE_COUNT] += 1;
 						
 						if((zero=Dividend->Zero()) && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {	// see if divdend went to zero, and dif >= DivisorOrig
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl; 
 							acc->Increment();
 							counter[COUNTERS::DEC_COUNT] += 1;
 						}
 						else {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 						}
 
 						counter[COUNTERS::COMPARE_CLK] += dif->counter[COUNTERS::COMPARE_CLK];
@@ -3902,7 +3867,7 @@ int zero;
 
 					// ERROR DETECTION ROUTINE
 					if(!DivCheck(DividendOrig, DivisorOrig, acc, rm)) {
-						printf("ERROR in INTEGER DIVIDE !!! - DIVPM5\n");
+						cout << "ERROR in INTEGER DIVIDE !!! - DIVPM5" << endl;
 						cout << "DivisorOrig: " << DivisorOrig->Print10() << " DividendOrig: " << DividendOrig->Print10() << endl;
 						wait_key();
 						error_code = INTERNAL_ERROR;
@@ -3923,7 +3888,7 @@ int zero;
 
 			Divisor->Increment();
 			
-			if(this->ena_dplytrc) printf("+d ");
+			if (this->ena_dplytrc) cout << "+d ";
 			counter[COUNTERS::DEC_COUNT] += 1;
 		}
 
@@ -4008,7 +3973,7 @@ int error_code = 0;		// start with no error
 //	clear_counters();			// clear the counters first
 
 	if(Divisor->Zero()) {	// check for divide by zero, flag error and return
-		printf("ERROR: DIVIDE BY ZERO ERROR!\r\n");
+		cout << "ERROR: DIVIDE BY ZERO ERROR!" << endl;
 		error_code = DIVIDE_BY_ZERO;
 		wait_key();
 		div_done = 1;
@@ -4026,11 +3991,11 @@ int error_code = 0;		// start with no error
 	}
 
 
-	printf("\n At start: \n");
+	cout << endl << " At start: " << endl;
 	Dividend->PrintDemo();
-	printf("\n");
+	cout << endl;
 	Divisor->PrintDemo();
-	printf("\n");
+	cout << endl;
 	cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 	wait_key();
 
@@ -4044,19 +4009,19 @@ int error_code = 0;		// start with no error
 
 				if(Dividend->Dec_by_next_fact_PM(Divisor, dcnt, prime_index, pwr, NumDigits)) {			// subtracts the dividend by enough to make divisble by mod^pwr			
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << "n ";	// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
-					printf("before divide: \n");
+					cout << "before divide: " << endl;
 					Dividend->PrintDemo();
-					printf("\n");
+					cout << endl;
 					Divisor->PrintDemo();
-					printf("\n");
+					cout << endl;
 					cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 					wait_key();
 
-					printf("divided by: %d", power(ModTable::primes[prime_index], pwr));
-					printf("\n");
+					cout << "divided by: " << power(ModTable::primes[prime_index], pwr);
+					cout << endl;
 
 					Dividend->ModDiv(power(ModTable::primes[prime_index], pwr));
 					Divisor->ModDiv(power(ModTable::primes[prime_index], pwr));
@@ -4067,13 +4032,13 @@ int error_code = 0;		// start with no error
 //					Dividend->Rn[prime_index]->Skip = 1;	
 
 					Dividend->PrintDemo();
-					printf("\n");
+					cout << endl;
 					Divisor->PrintDemo();
-					printf("\n");
+					cout << endl;
 					cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 					wait_key();
 					
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -4083,18 +4048,18 @@ int error_code = 0;		// start with no error
 
 					if(Divisor->AnyPartSkips()) {				// if any pending full skips or partial skips, then perform base extension
 
-						printf("extend 1: \n");
+						cout << "extend 1: " << endl;
 						numcnt = Dividend->ExtendPart2Norm();
 						Divisor->ExtendPart2Norm();
 
 						Dividend->PrintDemo();
-						printf("\n");
+						cout << endl;
 						Divisor->PrintDemo();
-						printf("\n");
+						cout << endl;
 						cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 						wait_key();
 
-						if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+						if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 						counter[COUNTERS::BASE_EXTEND] += 1;
 						counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -4116,18 +4081,18 @@ int error_code = 0;		// start with no error
 			}								// end of while(!pm2.one()  && (prime_index < NUM_PM_DIGS-1)) {
 
 			if(Divisor->AnyPartSkips()) {
-				printf("extend 2: \n");
+				cout << "extend 2: " << endl;
 				numcnt = Dividend->ExtendPart2Norm();
 				Divisor->ExtendPart2Norm();
 
 				Dividend->PrintDemo();
-				printf("\n");
+				cout << endl;
 				Divisor->PrintDemo();
-				printf("\n");
+				cout << endl;
 				cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 				wait_key();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -4138,17 +4103,17 @@ int error_code = 0;		// start with no error
 //			cout << "\r\nDividend: " << Dividend->Prints() << " = " << Dividend->Print10() << endl;
 //			cout << "Divisor:  " << Divisor->Prints() << " = " << Divisor->Print10() << endl;
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if (this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				printf("divisor is one, or dividend is zero\n");
+				cout << "divisor is one, or dividend is zero" << endl;
 				wait_key();
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 
@@ -4204,7 +4169,7 @@ int error_code = 0;		// start with no error
 //					dif->Sub(DividendCopy);			// subtract DividendCopy from dif (creates the real difference)		
 					counter[COUNTERS::SUB_COUNT] += 1;
 
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //					printf("dif = %I64d, dif %.*f percent of DividendCopy", dif->decimal3(), 5, (float) dif->decimal3()/(float) DividendCopy->decimal3()*100.0);
 //					printf("\r\n");
 
@@ -4218,7 +4183,7 @@ int error_code = 0;		// start with no error
 					counter[COUNTERS::LOOP_COUNT] += 1;
 				}
 				else {							// division is now complete ....
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if(this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 
 					if(dif->IsEqual(temp)) {	// added this check, in case dif is EQUAL to temp
 //					if(dif->IsEqual(DivisorOrig)) {
@@ -4226,7 +4191,7 @@ int error_code = 0;		// start with no error
 												// one case is: 	val1 = 53 * 59 * 71 * 73 * 73;			// dividing these results in error!  (should be fixed now)	
 												//					val2 = 59;
 						counter[COUNTERS::ADD_COUNT] += 1;
-						printf("Post increment when dif equals temp\n");
+						cout << "Post increment when dif equals temp" << endl;
 					}
 					else {						// This is the poorly understood accum adjustment part
 												// Need to study this!  - it's an error measure of the final division
@@ -4242,13 +4207,13 @@ int error_code = 0;		// start with no error
 						
 //						if(dif->Compare(DividendOrig, clocks)) {	// see if quotient is high by one, if so, adjust ...
 						if((Dividend->Zero()) && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 							acc->Increment();
 							counter[COUNTERS::DEC_COUNT] += 1;
-							printf("Post increment with Dividend = 0\n");
+							cout << "Post increment with Dividend = 0" << endl;
 						}
 						else {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //							printf(" no adjust ");
 						}
 
@@ -4272,7 +4237,7 @@ int error_code = 0;		// start with no error
 
 					// ERROR DETECTION ROUTINE
 					if(!DivCheck(DividendOrig, DivisorOrig, acc, rm)) {
-						printf("ERROR in INTEGER DIVIDE !!!\n");
+						cout << "ERROR in INTEGER DIVIDE !!!" << endl;
 						error_code = INTERNAL_ERROR;
 						wait_key();
 					}
@@ -4295,15 +4260,15 @@ int error_code = 0;		// start with no error
 //			Divisor->Decrement();
 			Divisor->Increment();
 
-			printf("divisor Incremented by 1: \n");
+			cout << "divisor Incremented by 1: " << endl;
 			Dividend->PrintDemo();
-			printf("\n");
+			cout << endl;
 			Divisor->PrintDemo();
-			printf("\n");
+			cout << endl;
 			cout << "Dividend: " << Dividend->Print10() << ", Divisor: " << Divisor->Print10() << endl;
 			wait_key();
 			
-			if(this->ena_dplytrc) printf("+d ");
+			if (this->ena_dplytrc) cout << "+d ";
 			counter[COUNTERS::DEC_COUNT] += 1;
 		}
 
@@ -4415,7 +4380,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 				if(Dividend->Dec_by_next_fact_PM(Divisor, dcnt, prime_index, pwr, NumDigits)) {			// subtracts the dividend by enough to make divisble by mod^pwr			
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << "n ";	// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
 					Dividend->ModDiv(power(ModTable::primes[prime_index], pwr));
@@ -4423,7 +4388,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 					counter[COUNTERS::DIV_COUNT] += 1;			// two divides above count as one clock, done in paralell
 					
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -4436,7 +4401,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 						numcnt = Dividend->ExtendPart2Norm();
 						Divisor->ExtendPart2Norm();
 
-						if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+						if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 						counter[COUNTERS::BASE_EXTEND] += 1;
 						counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -4459,21 +4424,21 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 				numcnt = Dividend->ExtendPart2Norm();
 				Divisor->ExtendPart2Norm();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
 			}
 
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if (this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 				acc->Add(Dividend);			// acc += result
@@ -4496,7 +4461,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 //				if(!Dividend->Zero() && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {		// if dif >= DivisorOrig then .....
 				if(!Dividend->Zero()) {		// if dif >= DivisorOrig then .....
 					
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 
 					DividendCopy->Assign(dif);		// set up DividendCopy for next iteration
 					Dividend->Assign(dif);			// set up Dividend register for next iteration
@@ -4521,7 +4486,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 				}
 */
 				else {							// division is now complete ....
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 												// This is the post accum adjustment part
 					if(dif->IsEqual(temp) && !dif->Zero()) {	// added this check, in case dif is EQUAL to temp, but not zero!
 						acc->Increment();		// (this case comes about when dividing evenly by large semi primes > PM ?)
@@ -4538,13 +4503,13 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 						counter[COUNTERS::COMPARE_COUNT] += 1;
 						
 						if((zero=Dividend->Zero()) && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {	// see if divdend went to zero, and dif >= DivisorOrig
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //							if(dif->Compare(DivisorOrig, clocks)) printf("TEST: dif is larger\n");
 							acc->Increment();
 							counter[COUNTERS::DEC_COUNT] += 1;
 						}
 						else {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 						}
 
 						counter[COUNTERS::COMPARE_CLK] += dif->counter[COUNTERS::COMPARE_CLK];
@@ -4565,7 +4530,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 					// ERROR DETECTION ROUTINE
 					if(!DivCheck(DividendOrig, DivisorOrig, acc, rm)) {
-						printf("ERROR in INTEGER DIVIDE !!! - DIVPM5\n");
+						cout << "ERROR in INTEGER DIVIDE !!! - DIVPM5" << endl;
 						cout << "DivisorOrig: " << DivisorOrig->Print10() << " DividendOrig: " << DividendOrig->Print10() << endl;
 						wait_key();
 						error_code = INTERNAL_ERROR;
@@ -4586,7 +4551,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 			Divisor->Increment();
 			
-			if(this->ena_dplytrc) printf("+d ");
+			if (this->ena_dplytrc) cout << "+d ";
 			counter[COUNTERS::DEC_COUNT] += 1;
 		}
 
@@ -4702,7 +4667,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 				if(Dividend->Dec_by_next_fact_PM(Divisor, dcnt, prime_index, pwr, NumDigits)) {			// subtracts the dividend by enough to make divisble by mod^pwr			
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << "n ";	// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
 					Dividend->ModDiv(power(ModTable::primes[prime_index], pwr));
@@ -4710,7 +4675,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 					counter[COUNTERS::DIV_COUNT] += 1;			// two divides above count as one clock, done in paralell
 					
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -4747,21 +4712,21 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 				numcnt = Dividend->ExtendPart2Norm();
 				Divisor->ExtendPart2Norm();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
 			}
 
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if (this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";			// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 				if(Divisor->AnyPartSkips()) {          // extend here to ensure addition and other operations are valid
@@ -4769,7 +4734,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 					numcnt = Dividend->ExtendPart2Norm();
 					Divisor->ExtendPart2Norm();
 
-					if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+					if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 					counter[COUNTERS::BASE_EXTEND] += 1;
 					counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -4797,7 +4762,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 //				if(!Dividend->Zero() && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {		// if dif >= DivisorOrig then .....
 				if(!Dividend->Zero()) {		// if dif >= DivisorOrig then .....
 					
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 
 					DividendCopy->Assign(dif);		// set up DividendCopy for next iteration
 					Dividend->Assign(dif);			// set up Dividend register for next iteration
@@ -4807,7 +4772,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 					
 				}
 				else {							// division is now complete ....
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 												// This is the post accum adjustment part
 					if(dif->IsEqual(temp) && !dif->Zero()) {	// added this check, in case dif is EQUAL to temp, but not zero!
 						acc->Increment();		// (this case comes about when dividing evenly by large semi primes > PM ?)
@@ -4825,13 +4790,13 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 						clocks = 0;
 						
 						if((zero=Dividend->Zero()) && (dif->IsEqual(DivisorOrig) || dif->Compare(DivisorOrig, clocks))) {	// see if divdend went to zero, and dif >= DivisorOrig
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 //							if(dif->Compare(DivisorOrig, clocks)) printf("TEST: dif is larger\n");
 							acc->Increment();
 							counter[COUNTERS::DEC_COUNT] += 1;
 						}
 						else {
-							if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+							if (this->ena_dplytrc) cout << " *(" << clocks << ")" << endl;
 						}
 
 //						counter[COUNTERS::COMPARE_CLK] += dif->counter[COUNTERS::COMPARE_CLK];
@@ -4854,7 +4819,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 					// ERROR DETECTION ROUTINE
 					if(!DivCheck(DividendOrig, DivisorOrig, acc, rm)) {
-						printf("ERROR in INTEGER DIVIDE !!! - DIVPM5\n");
+						cout << "ERROR in INTEGER DIVIDE !!! - DIVPM5" << endl;
 						cout << "DivisorOrig: " << DivisorOrig->Print10() << " DividendOrig: " << DividendOrig->Print10() << endl;
 						wait_key();
 						error_code = INTERNAL_ERROR;
@@ -4876,7 +4841,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 
 			Divisor->Increment();
 			
-			if(this->ena_dplytrc) printf("+d ");
+			if (this->ena_dplytrc) cout << "+d ";
 			counter[COUNTERS::DEC_COUNT] += 1;
 		}
 
@@ -4958,7 +4923,7 @@ int pwr;
 //	clear_counters();			// clear the counters first
 
 	if(Divisor->Zero()) {	// check for divide by zero, flag error and return
-		printf("ERROR: DIVIDE BY ERROR!\r\n");
+		cout << "ERROR: DIVIDE BY ERROR!" << endl;
 		wait_key();
 		div_done = 1;
 	}
@@ -4978,7 +4943,7 @@ int pwr;
 
 				if(Dividend->Dec_by_next_fact_PM_1pwr(Divisor, dcnt, prime_index, pwr, NumDigits)) {		// MODIFIED to allow only ONE power for hardware simulation				
 
-					if(dcnt && this->ena_dplytrc) printf(" -%dn ", dcnt);	// if there is a factor, print the offset, else skip this print					
+					if (dcnt && this->ena_dplytrc) cout << " -" << dcnt << "n ";							// if there is a factor, print the offset, else skip this print					
 					if(dcnt) counter[COUNTERS::SUB_COUNT] += 1;
 
 
@@ -4996,7 +4961,7 @@ int pwr;
 			cout << "Divisor:  " << Divisor->Prints() << endl;
 
 //					if(this->ena_dplytrc) printf("%d[]:", ModTable::primes[prime_index]);
-					if(this->ena_dplytrc) printf("%d[]:", power(ModTable::primes[prime_index], pwr));
+					if (this->ena_dplytrc) cout << power(ModTable::primes[prime_index], pwr) << "[]:";
 					
 					scnt += 1;
 					prime_index += 1;		// dec by next factor starts with this 
@@ -5009,7 +4974,7 @@ int pwr;
 						numcnt = Dividend->ExtendNorm();
 						Divisor->ExtendNorm();
 
-						if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+						if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 						counter[COUNTERS::BASE_EXTEND] += 1;
 						counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -5034,7 +4999,7 @@ int pwr;
 				numcnt = Dividend->ExtendNorm();
 				Divisor->ExtendNorm();
 
-				if(this->ena_dplytrc) printf(" <E:%d> ", numcnt);
+				if (this->ena_dplytrc) cout << " <E:" << numcnt << "> ";
 				counter[COUNTERS::BASE_EXTEND] += 1;
 				counter[COUNTERS::EXTEND_CLK] += numcnt;	// numerator extension takes longer, and is the key value we need
 
@@ -5045,14 +5010,14 @@ int pwr;
 //			cout << "\r\nDividend: " << Dividend->Prints() << " = " << Dividend->Print10() << endl;
 //			cout << "Divisor:  " << Divisor->Prints() << " = " << Divisor->Print10() << endl;
 				
-			if(this->ena_dplytrc) printf("{%d} ", scnt);
+			if (this->ena_dplytrc) cout << "{" << scnt << "} ";
 
 			if(Divisor->One() || Dividend->Zero()) {				// division loop done ..., added zero check, doesn't seem to chg fraction case
 
-				if(Divisor->One() && this->ena_dplytrc) printf(" <1> ");
+				if (Divisor->One() && this->ena_dplytrc) cout << " <1> ";
 					
 				if(Dividend->Zero()) {
-					if(this->ena_dplytrc) printf(" <0> ");		// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
+					if (this->ena_dplytrc) cout << " <0> ";			// this may be a short cut to zero result, but it is not inclusive, not all zero results pass through this logic
 				}
 
 
@@ -5101,7 +5066,7 @@ int pwr;
 					dif->Sub(DividendCopy);			// subtract DividendCopy from dif (creates the real difference)		
 					counter[COUNTERS::SUB_COUNT] += 1;
 					 
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")\r\n" << endl;
 //					printf("dif = %I64d, dif %.*f percent of DividendCopy", dif->decimal3(), 5, (float) dif->decimal3()/(float) DividendCopy->decimal3()*100.0);
 //					printf("\r\n");
 
@@ -5117,7 +5082,7 @@ int pwr;
 				}
 				else {							// division is now complete ....
 					cout << "\r\ntrial<=(dividend_copy*divisor), division terminating: " << endl;
-					if(this->ena_dplytrc) printf(" *(%d)\r\n", clocks);
+					if (this->ena_dplytrc) cout << " *(" << clocks << ")\r\n";
 
 					if(dif->IsEqual(temp)) {	// added this check, in case dif is EQUAL to temp
 						acc->Increment();		// (this case comes about when dividing evenly by large semi primes > PM ?)
@@ -5603,7 +5568,7 @@ __int64 dig_inv;
 		if(!PowerValid) Skip = 1;				// THIS IS A KEY POINT, THAT THIS IS AUTOMATICALLY DONE, THIS IS IMPORTANT!
 
 		if(PowerValid < 0) {
-			printf("ERROR: PowerValid <= 0 in PPMDigit::Div\n");
+			cout << "ERROR: PowerValid <= 0 in PPMDigit::Div" << endl;
 			wait_key();
 			return(-1);
 		}
@@ -5611,59 +5576,30 @@ __int64 dig_inv;
 		return(Digit);
 	}
 	else {          // search for an multiplicative inverse, not elegant, but works for lib
+		if (ModTable::returnRoutine() & USE_MODDIV_LUT) {
 
-#ifdef USE_MODDIV_LUT
-	#ifdef USE_BRUTE_LUT
-
-		Digit = (int) ModTable::arrayDivTbl[Index][Digit][digval];		// perform a ModDiv brute force look up
-		Digit = Digit % power(Modulus, PowerValid);						// truncate the digit range is neccesary
-
-	#else 
-
-		int InvMod = (int) ModTable::ModDivTbl[Index][PowerValid-1][digval];		// get the multiplicative inverse of this_mod (@ Index) with respect to digmod
-		Digit = (Digit * InvMod) % power(Modulus, PowerValid);						// multiply the digit by the multiplicative inverse, then take MOD (this->current_modulus)
-
-	#endif
-
-	return(Digit);
-
-#else
-
-
-		dig_limit = power(Modulus, PowerValid);
-
-#ifdef USE_BRUTE_LUT
-
-		
-//	brute force search
-		for(i=0; i<dig_limit; i++) {
-			trial_dig = (unsigned long long)(i * (digval)) % dig_limit;
-			if(trial_dig == Digit) {
-//				Digit = i;
-//				return(i);
-				break;
-			}
+			int InvMod = (int)ModTable::ModDivTbl[Index][PowerValid - 1][digval];		// get the multiplicative inverse of this_mod (@ Index) with respect to digmod
+			Digit = (Digit * InvMod) % power(Modulus, PowerValid);						// multiply the digit by the multiplicative inverse, then take MOD (this->current_modulus)
+			return(Digit);
 		}
+		else if (ModTable::returnRoutine() & USE_BRUTE_LUT) {
 
-#else			// default is to use the Euclidean method for finding inverse
+			Digit = (int)ModTable::arrayDivTbl[Index][Digit][digval];		// perform a ModDiv brute force look up
+			Digit = Digit % power(Modulus, PowerValid);						// truncate the digit range is neccesary
+			return(Digit);
+		}
+		else {
 
-		dig_inv = get_inv(digval, dig_limit);			// get inverse using extended Euclidean
-		trial_dig = (unsigned long long)(dig_inv * Digit) % dig_limit;
-		i = trial_dig;		// take out if using brute force
+			dig_limit = power(Modulus, PowerValid);
 
-#endif
 
-//		if (trial_dig != 0) {
-//			printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%d, digval=%d, skip=%d\n", Digit, dig_limit, i, digval, Skip);
-//			wait_key();
-//		}
+			// default is to use the Euclidean method for finding inverse
 
-//		if (trial_dig != i) {
-//			printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%d, digval=%d, skip=%d\n", Digit, dig_limit, i, digval, Skip);
-//			wait_key();
-//		}
+			dig_inv = get_inv(digval, dig_limit);			// get inverse using extended Euclidean
+			trial_dig = (unsigned long long)(dig_inv * Digit) % dig_limit;
+			i = trial_dig;		// take out if using brute force
 
-		Digit = i;		// don't forget!
+			Digit = i;		// don't forget!
 		return(i);
 
 		cout << "ERROR: in PPMDigit::Div, Digit = " << Digit << ", dig_limit = " << dig_limit
@@ -5671,7 +5607,72 @@ __int64 dig_inv;
 		//printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%lld, digval=%d, skip=%d\n", Digit, dig_limit, i, digval, Skip);
 		wait_key();
 		return(-1);			// first error condition, likley unhandled
-#endif
+
+		}
+
+		
+
+		// -----------------------------------------------------------------------------------------
+//#ifdef USE_MODDIV_LUT
+//	#ifdef USE_BRUTE_LUT
+//
+//		Digit = (int) ModTable::arrayDivTbl[Index][Digit][digval];		// perform a ModDiv brute force look up
+//		Digit = Digit % power(Modulus, PowerValid);						// truncate the digit range is neccesary
+//
+//	#else 
+//
+//		int InvMod = (int) ModTable::ModDivTbl[Index][PowerValid-1][digval];		// get the multiplicative inverse of this_mod (@ Index) with respect to digmod
+//		Digit = (Digit * InvMod) % power(Modulus, PowerValid);						// multiply the digit by the multiplicative inverse, then take MOD (this->current_modulus)
+//
+//	#endif
+//
+//	return(Digit);
+//
+//#else
+//
+//
+//		dig_limit = power(Modulus, PowerValid);
+//
+//#ifdef USE_BRUTE_LUT
+//
+//		
+////	brute force search
+//		for(i=0; i<dig_limit; i++) {
+//			trial_dig = (unsigned long long)(i * (digval)) % dig_limit;
+//			if(trial_dig == Digit) {
+////				Digit = i;
+////				return(i);
+//				break;
+//			}
+//		}
+//
+//#else			// default is to use the Euclidean method for finding inverse
+//
+//		dig_inv = get_inv(digval, dig_limit);			// get inverse using extended Euclidean
+//		trial_dig = (unsigned long long)(dig_inv * Digit) % dig_limit;
+//		i = trial_dig;		// take out if using brute force
+//
+//#endif
+//
+////		if (trial_dig != 0) {
+////			printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%d, digval=%d, skip=%d\n", Digit, dig_limit, i, digval, Skip);
+////			wait_key();
+////		}
+//
+////		if (trial_dig != i) {
+////			printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%d, digval=%d, skip=%d\n", Digit, dig_limit, i, digval, Skip);
+////			wait_key();
+////		}
+//
+//		Digit = i;		// don't forget!
+//		return(i);
+//
+//		cout << "ERROR: in PPMDigit::Div, Digit = " << Digit << ", dig_limit = " << dig_limit
+//			<< ", index = " << i << ", digval = " << digval << ", skip = " << Skip; 
+//		//printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%lld, digval=%d, skip=%d\n", Digit, dig_limit, i, digval, Skip);
+//		wait_key();
+//		return(-1);			// first error condition, likley unhandled
+//#endif
 	}
 
 }
@@ -5706,7 +5707,7 @@ unsigned long i;
 		if(!PowerValid) Skip = 1;				// THIS IS A KEY POINT, THAT THIS IS AUTOMATICALLY DONE, THIS IS IMPORTANT!
 
 		if(PowerValid < 0) {
-			printf("ERROR: PowerValid <= 0 in PPMDigit::Div\n");
+			cout << "ERROR: PowerValid <= 0 in PPMDigit::Div" << endl;
 			wait_key();
 			return(-1);
 		}
@@ -5714,29 +5715,49 @@ unsigned long i;
 		return(Digit);
 	}
 	else {          // search for an multiplicative inverse, not elegant, but works for lib
+		if (ModTable::returnRoutine() & USE_MODDIV_LUT) {
+			int InvMod = (int)ModTable::ModDivTbl[Index][PowerValid - 1][digmod];		// get the multiplicative inverse of this_mod (@ Index) with respect to digmod
+			Digit = (Digit * InvMod) % power(Modulus, PowerValid);		// multiply the digit by the multiplicative inverse, then take mod this->modulus
 
-#ifdef USE_MODDIV_LUT
-
-//		int this_mod = power(Modulus, PowerValid);
-//		int InvMod = (int) ModTable::ModDivTbl[this_mod][digmod];	// get the multiplicative inverse of this_mod with respect to digmod
-		int InvMod = (int) ModTable::ModDivTbl[Index][PowerValid-1][digmod];		// get the multiplicative inverse of this_mod (@ Index) with respect to digmod
-		Digit = (Digit * InvMod) % power(Modulus, PowerValid);		// multiply the digit by the multiplicative inverse, then take mod this->modulus
-
-		return(Digit);
-#else
-		dig_limit = power(Modulus, PowerValid);
-		for(i=0; i<dig_limit; i++) {
-			trial_dig = (unsigned long)(i * digmod) % dig_limit;
-			if(trial_dig == Digit) {
-				Digit = i;
-				return(i);
-			}
+			return(Digit);
 		}
+		else {
+			dig_limit = power(Modulus, PowerValid);
+			for (i = 0; i < dig_limit; i++) {
+				trial_dig = (unsigned long)(i * digmod) % dig_limit;
+				if (trial_dig == Digit) {
+					Digit = i;
+					return(i);
+				}
+			}
 
-		printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%d, digval=%d, skip=%d\n", Digit, dig_limit, i, digmod, Skip);
-		wait_key();
-		return(-1);			// first error condition, likley unhandled
-#endif
+			cout << "ERROR: in PPMDigit::Div, Digit=" << Digit << ", dig_limit=" << dig_limit << ", index=" << i << ", digval=" << digmod << ", skip=" << Skip << endl;
+			wait_key();
+			return(-1);			// first error condition, likley unhandled
+		}
+// --------------------------------------------------------------------------------------------
+//#ifdef USE_MODDIV_LUT
+//
+////		int this_mod = power(Modulus, PowerValid);
+////		int InvMod = (int) ModTable::ModDivTbl[this_mod][digmod];	// get the multiplicative inverse of this_mod with respect to digmod
+//		int InvMod = (int) ModTable::ModDivTbl[Index][PowerValid-1][digmod];		// get the multiplicative inverse of this_mod (@ Index) with respect to digmod
+//		Digit = (Digit * InvMod) % power(Modulus, PowerValid);		// multiply the digit by the multiplicative inverse, then take mod this->modulus
+//
+//		return(Digit);
+//#else
+//		dig_limit = power(Modulus, PowerValid);
+//		for(i=0; i<dig_limit; i++) {
+//			trial_dig = (unsigned long)(i * digmod) % dig_limit;
+//			if(trial_dig == Digit) {
+//				Digit = i;
+//				return(i);
+//			}
+//		}
+//
+//		printf("ERROR: in PPMDigit::Div, Digit=%d, dig_limit=%d, index=%d, digval=%d, skip=%d\n", Digit, dig_limit, i, digmod, Skip);
+//		wait_key();
+//		return(-1);			// first error condition, likley unhandled
+//#endif
 	}
 
 }
@@ -5789,7 +5810,7 @@ int PPMDigit::TruncMod(unsigned int num_pwrs)
 		return(1);
 	}
 	else {
-		printf("Error: Truncation error in truncmod\n");
+		cout << "Error: Truncation error in truncmod" << endl;
 		wait_key();
 		return(0);
 	}
