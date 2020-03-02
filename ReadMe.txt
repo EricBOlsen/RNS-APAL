@@ -4,6 +4,8 @@ Version 16.4.5
 
 Download Visual Studio and select the C++ development environment & tools.
 
+THIS IS THE LATEST RELEASE.
+
 The user may need to re-compile the project solution to match their installed Windows SDK.
 Open the solution.  Right click on the project name "RNS-APAL" in the Solution Explorer pane, and
 select "Retarget Projects".  Select the appropriate installed Windows SDK, if none is present, you 
