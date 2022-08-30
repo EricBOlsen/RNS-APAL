@@ -26,7 +26,7 @@ private:
 public:
 //	PMF::PMF(int denom);			// create a PMF fraction by inverting an integer
 	SPMF(__int64 x); 
-	SPMF::~SPMF(void);
+	~SPMF(void);
 
 	string Prints(void);			// print native SPMF with fractional point!
 	string Prints(int radix);		// print native SPMF with fractional point using radix argument!

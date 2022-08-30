@@ -18,7 +18,7 @@ class MRDigit {
 
 public:
 
-	MRDigit::MRDigit(int Digit, int Power, int Skip);
+	MRDigit(int Digit, int Power, int Skip);
 
 	int Digit;
 	int Power;
@@ -33,9 +33,9 @@ class MRN {
 
 public:
 
-	MRN::MRN(PPM *ppm);			// create an MRn number class using a Residue input (implicit conversion)
-	MRN::MRN(PPM *ppm, int &clocks);	// create an MRn number class using a Residue input (implicit conversion) wiith clock counting
-	MRN::~MRN();				// destructor to deallocate the memory
+	MRN(PPM *ppm, int &clocks);	// create an MRn number class using a Residue input (implicit conversion) wiith clock counting
+	MRN(PPM *ppm);			// create an MRn number class using a Residue input (implicit conversion)
+	~MRN();				// destructor to deallocate the memory
 
 	void Print(void);			// print the MRN, including skipped digits
 	__int64 Decimal64(void);	// print the value as __int64

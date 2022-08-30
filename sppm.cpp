@@ -6,17 +6,17 @@
 //	RNS-APAL is protected under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License
 //	
 //	You are free to:
-//	Share — copy and redistribute the material in any medium or format.
-//	Adapt — remix, transform, and build upon the material.
+//	Share - copy and redistribute the material in any medium or format.
+//	Adapt - remix, transform, and build upon the material.
 //
 //	The licensor cannot revoke these freedoms as long as you follow the license terms.
 //
 //	Under the following terms:
-//	Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
+//	Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
 //				  the licensor endorses you or your use.
-//	Non Commercial — You may not use the material for commercial purposes.
-//	Share Alike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-//	No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+//	Non Commercial - You may not use the material for commercial purposes.
+//	Share Alike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+//	No additional restrictions - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 //
 //	Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
 //	
@@ -34,7 +34,15 @@
 //						V0.107: December 31, 2019, Modified print demo routine for future expansion.
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
+#if defined(_WIN32) && !defined(__linux__)
 #include "stdafx.h"
+
+#elif defined(__linux__) && !defined(_WIN32)
+#include <inttypes.h>
+typedef int64_t __int64;
+#else
+
+#endif
 #include "stdio.h"
 #include "math.h"
 #include "utilities.h"
@@ -372,7 +380,7 @@ std::vector<char> s(sval.size()+1);
 
 	std::copy(sval.begin(), sval.end(), s.begin());			// copy string into vector for easier processing
 
-	this->Assign(0LL);				// init sppm to zero first
+	this->Assign((__int64)0);				// init sppm to zero first
 
 	if(s[0] == '+') {
 		start = 1;		// allow a single plus sign at start, no minus
@@ -400,7 +408,7 @@ std::vector<char> s(sval.size()+1);
 			}
 			else {
 				cout << "Error in string format, returning" << endl;
-				this->Assign(0LL);
+				this->Assign((__int64)0);
 				return;
 			}
 		}
@@ -410,13 +418,13 @@ std::vector<char> s(sval.size()+1);
 			}
 			else {
 				cout << "Error in string format, returning" << endl;
-				this->Assign(0LL);
+				this->Assign((__int64)0);
 				return;
 			}
 		}
 		else {
 			cout << "Error in string format, returning" << endl;
-			this->Assign(0LL);
+			this->Assign((__int64)0);
 			return;
 		}
 
@@ -431,7 +439,7 @@ std::vector<char> s(sval.size()+1);
 void SPPM::Increment(void)
 {
 
-	this->Add(1LL);
+	this->Add((__int64)1);
 
 
 }
@@ -440,7 +448,7 @@ void SPPM::Increment(void)
 void SPPM::Decrement(void)
 {
 
-	this->Sub(1LL);
+	this->Sub((__int64)1);
 
 }
 
@@ -580,7 +588,7 @@ void SPPM::Mult(SPPM *arg)
 // This is a a multiply by a signed integer - Helper Function
 void SPPM::Mult(__int64 x)
 {
-SPPM* sppm_x = new SPPM(this, 0LL);			// recently made this change to fix GoldDiv, EO 1/2020
+SPPM* sppm_x = new SPPM(this, (__int64)0);			// recently made this change to fix GoldDiv, EO 1/2020
 
 	sppm_x->Assign(x);
 	this->Mult(sppm_x);
@@ -783,7 +791,7 @@ PPM *two = new PPM(2);
 PPM *rem = new PPM(0);
 
 	if(ModTable::returnNumDigits() == ABS_SIGNED_RANGE) {
-		ppm->Assign(0LL);								// case where extended digits is not supported
+		ppm->Assign((__int64)0);								// case where extended digits is not supported
 	}
 	else {
 		error = PPM::GetRange(ppm, ABS_SIGNED_RANGE);		// get the machine number range when extended digits are supported

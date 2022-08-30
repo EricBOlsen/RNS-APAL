@@ -6,17 +6,17 @@
 //	RNS-APAL is protected under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License
 //	
 //	You are free to:
-//	Share — copy and redistribute the material in any medium or format.
-//	Adapt — remix, transform, and build upon the material.
+//	Share - copy and redistribute the material in any medium or format.
+//	Adapt - remix, transform, and build upon the material.
 //
 //	The licensor cannot revoke these freedoms as long as you follow the license terms.
 //
 //	Under the following terms:
-//	Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
+//	Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
 //				  the licensor endorses you or your use.
-//	Non Commercial — You may not use the material for commercial purposes.
-//	Share Alike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-//	No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+//	Non Commercial - You may not use the material for commercial purposes.
+//	Share Alike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+//	No additional restrictions - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 //
 //	Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
 //	
@@ -34,7 +34,17 @@
 //						V0.107: December 31, 2019, Modified print demo routine for future expansion.
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
+#if defined(_WIN32) && !defined(__linux__)
 #include "stdafx.h"
+
+#elif defined(__linux__) && !defined(_WIN32)
+#include <algorithm>
+#include <inttypes.h>
+typedef  int64_t __int64;
+
+#else
+
+#endif
 #include "stdio.h"
 #include "math.h"
 #include "utilities.h"
@@ -83,13 +93,13 @@ long long maxdigit;
 	if ((mode & CUSTOM) && (mode & NO_POWERS)) {
 		for (i = 0; i < req_num_digs; i++) {
 
-			req_modulus[i] = modulus[i];
+			req_modulus[i] = Modulus[i];
 
 		}
 	}
 	else if (mode & CUSTOM) {
 		for (i = 0; i < req_num_digs; i++) {
-			req_modulus[i] = modulus[i];
+			req_modulus[i] = Modulus[i];
 			req_powers[i] = num_powers[i];
 		}
 	}
@@ -102,9 +112,9 @@ long long maxdigit;
 		if(!(req_mode & CUSTOM)) {                             // If NOT using CUSTOM_MODULUS, then generate the primes in sequence
 			init_prime(primes, req_num_digs);
 		}
-		else if(req_mode & CUSTOM) {                        // else, if using CUSTOM_MODULUS, then generate the primes using "modulus[]" array
+		else if(req_mode & CUSTOM) {                        // else, if using CUSTOM_MODULUS, then generate the primes using "Modulus[]" array
 			for(i=0; i< req_num_digs; i++) {
-				primes[i] = modulus[i];
+				primes[i] = Modulus[i];
 			}
 		}
 	}
@@ -288,7 +298,7 @@ int ModTable::GetCustDigitMod(int index, int &pwr)
 // this provides the auto_power function if using #define Custom_Powers 0
 int ModTable::GetAutoDigitMod(int index, int &pwr, int q)
 {
-long long binary_power;
+__int64 binary_power;
 int temp_width;
 
 	pwr = 1;
@@ -316,7 +326,7 @@ int temp_width;
 int ModTable::GetMaxDigWidth(long long &maxdigit, int req_num_digs)
 {
 int i, mod, pwr, binwidth;
-long long digwidth;
+__int64 digwidth;
 int mode = ModTable::returnMode();
 
 	maxdigit = 0;
@@ -2449,7 +2459,7 @@ int PPM::GetRange(PPM *val, int num_digits)
 void PPM::GetFullRange(PPM *ppm)
 {
 
-	ppm->AssignPM(0LL);
+	ppm->AssignPM((__int64)0);
 
 	ppm->Decrement();		// decrement from zero, and get the max value
 
@@ -3719,7 +3729,7 @@ int zero;
 	}
 
 	if(this->IsEqual(Divisor)) {     // This check not needed, but makes the division of same number faster
-		this->Assign(1LL);
+		this->Assign((__int64)1);
 		rm->Assign(0);
 		div_done = 1;
 	}
@@ -3985,7 +3995,7 @@ int error_code = 0;		// start with no error
 	}
 
 	if(this->IsEqual(Divisor)) {     // check not needed, but makes same number division faster
-		this->Assign(1LL);
+		this->Assign((__int64)1);
 		rm->Assign(0);
 		div_done = 1;
 	}
@@ -4365,7 +4375,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 	}
 
 	if(this->IsEqual(Divisor)) {     // This check not needed, but makes the division of same number faster
-		this->Assign(1LL);
+		this->Assign((__int64)1);
 		rm->Assign(0);
 		div_done = 1;
 	}
@@ -4652,7 +4662,7 @@ int first_zero = 0;		// flag to indicate the dividend has gone to zero at least 
 	}
 
 	if(this->IsEqual(Divisor)) {     // This check not needed, but makes the division of same number faster
-		this->Assign(1LL);
+		this->Assign((__int64)1);
 		rm->Assign(0);
 		div_done = 1;
 	}

@@ -6,17 +6,17 @@
 //	RNS-APAL is protected under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License
 //	
 //	You are free to:
-//	Share — copy and redistribute the material in any medium or format.
-//	Adapt — remix, transform, and build upon the material.
+//	Share - copy and redistribute the material in any medium or format.
+//	Adapt - remix, transform, and build upon the material.
 //
 //	The licensor cannot revoke these freedoms as long as you follow the license terms.
 //
 //	Under the following terms:
-//	Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
+//	Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
 //				  the licensor endorses you or your use.
-//	Non Commercial — You may not use the material for commercial purposes.
-//	Share Alike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-//	No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+//	Non Commercial - You may not use the material for commercial purposes.
+//	Share Alike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+//	No additional restrictions - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 //
 //	Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
 //	
@@ -34,7 +34,25 @@
 //						V0.107: December 31, 2019, Modified print demo routine for future expansion.
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
+#if defined(_WIN32) && !defined(__linux__)
+#if defined(_WIN32) && !defined(__linux__)
 #include "stdafx.h"
+
+#elif defined(__linux__) && !defined(_WIN32)
+#include <inttypes.h>
+typedef int64_t __int64;
+#else
+
+#endif
+
+#elif defined(__linux__) && !defined(_WIN32)
+#include <inttypes.h>
+typedef int64_t __int64;
+typedef char _TCHAR;
+
+#else
+
+#endif
 #include "stdlib.h"
 #include "stdio.h"
 #include "math.h"
@@ -42,6 +60,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <sstream>
 #include "utilities.h"
 #include "ppm.h"
@@ -59,11 +78,11 @@ void pm_alu_tests(void);
 void new_mult_test(void);
 
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, _TCHAR* argv[])
 {
 
 //  Example arrays for RNS with custom modulus
-//	int modulus[18] = { 11,   5,  13,   3,   2,  17,   7,  19, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509 };
+//	int Modulus[18] = { 11,   5,  13,   3,   2,  17,   7,  19, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509 };
 //	int ModPowers[18] = { 2,    3,   2,   5,   8,   2,   3,  2,  1,   1,   1,   1,   1,   1,   1,   1,   1,   1 };
 
 	change_console_width(WIN10_WIDTH);
@@ -73,7 +92,7 @@ int _tmain(int argc, _TCHAR* argv[])
 //	init_RNS_APAL(AUTO_GEN, USE_EXT_EUCL, 8, 0, NULL, NULL);								// Using Auto-generatoed, Integers Only, used in many tutorial examples
 //	init_RNS_APAL(CUSTOM|NO_POWERS, USE_BRUTE_LUT, 18, 6, modulus, ModPowers);				// 18 digit, CUSTOM modulus, with 6 digits of fractional range, see arrays above
 //	init_RNS_APAL(AUTO_GEN|NO_POWERS, USE_EXT_EUCL, 31, 8, NULL, NULL);						// Auto generated, No powers, 31 digits with 8 digits of fractional range				
-	init_RNS_APAL(AUTO_GEN, USE_EXT_EUCL, 31, 8, modulus, ModPowers);						// Auto generated, With Powers, 31 digits with 8 digits fractional range
+	init_RNS_APAL(AUTO_GEN, USE_EXT_EUCL, 31, 8, Modulus, ModPowers);						// Auto generated, With Powers, 31 digits with 8 digits fractional range
 
 
 	cout << "starting RNS-APAL library demo application ... \r" << endl;
@@ -668,7 +687,7 @@ int carry_out[100];
 int enable[100];	// enable stages
 
 const int power[100] = {2, 3, 5, 7, 11, 13, 17, 19};
-int modulus[100];
+int Modulus[100];
 int pwrcnt = 4;
 
 int shiftcnt;
@@ -686,7 +705,7 @@ int fract_cnt = pwrcnt;
 		carry[i] = 0;
 		carry_out[i] = 0;
 		enable[i] = 0;
-		modulus[i] = 1;
+		Modulus[i] = 1;
 	}
 	
 
@@ -704,18 +723,18 @@ int fract_cnt = pwrcnt;
 
 		for(j=shiftcnt-1; j>0; j--) {		// run through multiplicand and process carry registers and power registers
 			carry[j] = carry_out[j-1];
-			modulus[j] = modulus[j-1];
+			Modulus[j] = Modulus[j-1];
 		}
 		if(i < pwrcnt) {
-			modulus[0] = power[i];
+			Modulus[0] = power[i];
 		}
 		else {
-			modulus[0] = 1;
+			Modulus[0] = 1;
 		}
 		carry[0] = 0;
 
 		printf("modulus: ");
-		for(j=0; j<shiftcnt; j++) printf("%x ", modulus[j]);
+		for(j=0; j<shiftcnt; j++) printf("%x ", Modulus[j]);
 		printf("\r\n");
 		wait_key();
 		printf("    acc: ");
@@ -728,7 +747,7 @@ int fract_cnt = pwrcnt;
 		wait_key();
 		
 		for(j=0; j<shiftcnt; j++) {
-			acc[j] = modulus[j]*acc[j]+carry[j];
+			acc[j] = Modulus[j]*acc[j]+carry[j];
 			carry_out[j] = (acc[j] >> 4) & 0xf;
 			acc[j] = acc[j] & 0xf;
 		}
@@ -759,7 +778,7 @@ int carry_out[100];
 int enable[100];	// enable stages
 
 const int power[100] = {2, 3, 5, 7, 11, 13, 17, 19};
-int modulus[100];
+int Modulus[100];
 int pwrcnt = 4;
 
 int shiftcnt;
@@ -776,7 +795,7 @@ int fract_cnt = pwrcnt;
 		carry[i] = 0;
 		carry_out[i] = 0;
 		enable[i] = 0;
-		modulus[i] = 1;
+		Modulus[i] = 1;
 	}
 	
 
@@ -799,10 +818,10 @@ int fract_cnt = pwrcnt;
 //		printf("\r\n");
 
 
-//		printf("mod_out: %d, carry_out: %d \n", modulus[4], carry[4]);
+//		printf("mod_out: %d, carry_out: %d \n", Modulus[4], carry[4]);
 
 		printf("modulus: ");
-		for(j=0; j<shiftcnt; j++) printf("%x ", modulus[j]);
+		for(j=0; j<shiftcnt; j++) printf("%x ", Modulus[j]);
 		printf("\r\n");
 //		wait_key();
 		printf("    acc: ");
@@ -814,26 +833,26 @@ int fract_cnt = pwrcnt;
 		printf("\r\n");
 		wait_key();
 
-		ppm_acc->Mult(modulus[shiftcnt-1]);
+		ppm_acc->Mult(Modulus[shiftcnt-1]);
 		ppm_acc->Add(carry[shiftcnt-1]);
 		cout << ppm_acc->Prints() << "  = " << ppm_acc->Print(DEC) << endl;
 
 
 		for(j=shiftcnt; j>0; j--) {		// run through multiplicand and process carry registers and power registers
 			carry[j] = carry_out[j-1];
-			modulus[j] = modulus[j-1];
+			Modulus[j] = Modulus[j-1];
 		}
 		if(i < pwrcnt) {
-			modulus[0] = power[i];
+			Modulus[0] = power[i];
 		}
 		else {
-			modulus[0] = 1;
+			Modulus[0] = 1;
 		}
 		carry[0] = 0;
 
 
 		for(j=0; j<shiftcnt; j++) {
-			acc[j] = modulus[j]*acc[j]+carry[j];
+			acc[j] = Modulus[j]*acc[j]+carry[j];
 			carry_out[j] = (acc[j] >> 4) & 0xf;
 			acc[j] = acc[j] & 0xf;
 		}
@@ -859,7 +878,7 @@ int i, j;
 int digit, mr_digcnt;
 int power = 0;	
 int mrn[25];
-int modulus[25];
+int Modulus[25];
 int bin[25];
 int carry[25];
 int carry_out[25];
@@ -912,7 +931,7 @@ int mod_op[25];
 
 			
 			power = ppm->Rn[i]->GetFullPowMod();
-			modulus[i] = power;
+			Modulus[i] = power;
 
 			ppm_tmp->Assign(power);
 //			cout << ppm_tmp->Prints() << endl;
@@ -932,7 +951,7 @@ int mod_op[25];
 
 		if(ppm->Zero(i)) {		// leave asap to eliminate leading zeros and wasted time.
 			
-			modulus[i] = 0;		// end modulus should be sero
+			Modulus[i] = 0;		// end modulus should be sero
 			break;
 		}
 
@@ -947,7 +966,7 @@ int mod_op[25];
 				printf("<%d,1> ", mrn[i]);
 			}
 			else {
-				printf("<%d,%d> ", mrn[i], modulus[i]);
+				printf("<%d,%d> ", mrn[i], Modulus[i]);
 			}
 		}
 	}
@@ -974,13 +993,13 @@ int mod_op[25];
 
 
 	for(i=mr_digcnt-1; i>=0; i--) {
-		printf("<%d,%d> \r\n", mrn[i], modulus[i]);
+		printf("<%d,%d> \r\n", mrn[i], Modulus[i]);
 		for(j=mr_digcnt-1; j>0; j--) {
 			carry[j] = carry_out[j-1];
 			mod_op[j] = mod_op[j-1];
 		}
 		carry[0] = mrn[i];
-		mod_op[0] = modulus[i];
+		mod_op[0] = Modulus[i];
 
 		printf("Mod: ");
 		for(j=0; j<mr_digcnt; j++) {
@@ -1601,7 +1620,7 @@ int position, width;
 	printf("Enter operand A divisor: ");
 	scanf("%d", &val2);
 
-	temp->Assign(0LL);
+	temp->Assign((__int64)0);
 	temp->Add1(val2);
 
 	pmfA->Add1(val1);
@@ -1616,7 +1635,7 @@ int position, width;
 	printf("Enter operand B divisor: ");
 	scanf("%d", &val2);
 
-	temp->Assign(0LL);
+	temp->Assign((__int64)0);
 	temp->Add1(val2);
 
 	pmfB->Add1(val1);
