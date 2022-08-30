@@ -35,16 +35,14 @@
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
 
-#if defined(_WIN32) && !defined(__linux__)
-#include "stdafx.h"
-
-#elif defined(__linux__) && !defined(_WIN32)
+#if defined(__linux__) && !defined(_WIN32)
 #include <inttypes.h>
 #include <cmath>
 typedef int64_t __int64;
 #else
 
 #endif
+#include "stdafx.h"
 #include <iostream>
 #include "ppm.h"
 #include "init.h"

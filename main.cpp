@@ -34,18 +34,8 @@
 //						V0.107: December 31, 2019, Modified print demo routine for future expansion.
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
-#if defined(_WIN32) && !defined(__linux__)
-#if defined(_WIN32) && !defined(__linux__)
-#include "stdafx.h"
 
-#elif defined(__linux__) && !defined(_WIN32)
-#include <inttypes.h>
-typedef int64_t __int64;
-#else
-
-#endif
-
-#elif defined(__linux__) && !defined(_WIN32)
+#if defined(__linux__) && !defined(_WIN32)
 #include <inttypes.h>
 typedef int64_t __int64;
 typedef char _TCHAR;
@@ -53,6 +43,7 @@ typedef char _TCHAR;
 #else
 
 #endif
+#include "stdafx.h"
 #include "stdlib.h"
 #include "stdio.h"
 #include "math.h"

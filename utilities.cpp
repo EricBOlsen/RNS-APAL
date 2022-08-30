@@ -36,15 +36,14 @@
 
 //  Utilities for common use
 //
-#if defined(_WIN32) && !defined(__linux__)
-#include "stdafx.h"
 
-#elif defined(__linux__) && !defined(_WIN32)
+#if defined(__linux__) && !defined(_WIN32)
 #include <inttypes.h>
 typedef int64_t __int64;
 #else
 
 #endif
+#include "stdafx.h"
 #include "stdio.h"
 #include "math.h"
 #include "config.h"
