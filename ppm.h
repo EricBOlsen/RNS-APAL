@@ -43,7 +43,7 @@ class ModTable {
 
 public:
 
-	ModTable::ModTable(int mode, int rountine, int num_digs, int num_frac_digs, int* modulus, const int* num_powers);		// constructor
+	ModTable(int mode, int rountine, int num_digs, int num_frac_digs, int* modulus, const int* num_powers);		// constructor
 
 	static int ModTableInit;
 	static vector<vector<vector<short>>> arrayDivTbl;
@@ -106,8 +106,8 @@ public:
 
 public:
 
-	PPMDigit::PPMDigit(int digval, int mod_index, int power);
-	PPMDigit::~PPMDigit(void);
+	PPMDigit(int digval, int mod_index, int power);
+	~PPMDigit(void);
 
 	int Add(int digval);			// modular digit add
 	int Sub(int digval);			// modular digit subtract
@@ -162,10 +162,10 @@ public:
 	static PPM *Mult_range;		// building strategy to detect some types of overflow, input range check or otherwise
 
 
-	PPM::PPM(__int64 x);
-	PPM::PPM(PPM *copyval, __int64 x);			// create a PPM and copy all parameters of the PPM argument, make derived if Powervalid != Power
-	PPM::PPM(void);								// for testing
-	PPM::~PPM(void);
+	PPM(__int64 x);
+	PPM(PPM *copyval, __int64 x);			// create a PPM and copy all parameters of the PPM argument, make derived if Powervalid != Power
+	PPM(void);								// for testing
+	~PPM(void);
 
 	friend class ModTable;
 	// NEED TO USE THE OVERLOADED OPERATOR METHOD IN C++ FOR THE FOLLOWING FUNCTIONS!!! 

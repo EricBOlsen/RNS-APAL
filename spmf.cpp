@@ -6,17 +6,17 @@
 //	RNS-APAL is protected under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License
 //	
 //	You are free to:
-//	Share — copy and redistribute the material in any medium or format.
-//	Adapt — remix, transform, and build upon the material.
+//	Share - copy and redistribute the material in any medium or format.
+//	Adapt - remix, transform, and build upon the material.
 //
 //	The licensor cannot revoke these freedoms as long as you follow the license terms.
 //
 //	Under the following terms:
-//	Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
+//	Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
 //				  the licensor endorses you or your use.
-//	Non Commercial — You may not use the material for commercial purposes.
-//	Share Alike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-//	No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+//	Non Commercial - You may not use the material for commercial purposes.
+//	Share Alike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+//	No additional restrictions - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 //
 //	Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
 //	
@@ -35,6 +35,12 @@
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
 
+#if defined(__linux__) && !defined(_WIN32)
+#include <inttypes.h>
+typedef int64_t __int64;
+#else
+
+#endif
 #include "stdafx.h"
 #include "stdio.h"
 #include "math.h"
@@ -1312,7 +1318,7 @@ int digval1 = 0;
 //			acc->Print();
 //			printf("\r\n");
 
-//			pmpower->Mult(modulus[index]);
+//			pmpower->Mult(Modulus[index]);
 			pmpower->Mult(this->Rn[index]->GetPowMod2());		// get current power modulus
 
 		}
@@ -1399,7 +1405,7 @@ MRN *mrn = new MRN(rup);
 			acc->PrintDemo();
 			printf("\r\n");
 
-//			pmpower->Mult(modulus[index]);
+//			pmpower->Mult(Modulus[index]);
 			pmpower->Mult(this->Rn[index]->GetPowMod2());		// get current power modulus
 
 		}
@@ -1514,7 +1520,7 @@ int ru_done2 = 0;
 			temp->Mult(pmpower);
 			acc2->Add(temp);
 
-//			pmpower->Mult(modulus[index]);
+//			pmpower->Mult(Modulus[index]);
 			pmpower->Mult(this->Rn[index]->GetPowMod2());		// get current power modulus
 
 		}
@@ -1606,7 +1612,7 @@ int index = 0;
 
 	ppm1->Assign(this);		// do MR reduction using the PPM type
 
-	frac->Assign((long long)(0));		// clear the return arguments
+	frac->Assign((__int64)(0));		// clear the return arguments
 	whole->Assign(0);
 
 //	cout << "starting value = " << ppm1->Prints() << endl;
@@ -1781,7 +1787,7 @@ PPM *ppm_unit_inv = new PPM(1);
 	full_mult->PPM::Mult(ppm_unit_inv);		// multiply by multiplicative inverse
 
 	index = NumFractDigits;		// start base extension at the valid digit
-	this->Assign(0LL);
+	this->Assign((__int64)0);
 	pmpower->Assign(1);
 	do {
 
@@ -1876,7 +1882,7 @@ int digval1 = 0;
 //			acc->Print();
 //			printf("\r\n");
 
-//			pmpower->Mult(modulus[index]);
+//			pmpower->Mult(Modulus[index]);
 			pmpower->Mult(this->Rn[index]->GetPowMod2());		// get current power modulus
 
 		}

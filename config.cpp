@@ -6,17 +6,17 @@
 //	RNS-APAL is protected under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License
 //	
 //	You are free to:
-//	Share — copy and redistribute the material in any medium or format.
-//	Adapt — remix, transform, and build upon the material.
+//	Share - copy and redistribute the material in any medium or format.
+//	Adapt - remix, transform, and build upon the material.
 //
 //	The licensor cannot revoke these freedoms as long as you follow the license terms.
 //
 //	Under the following terms:
-//	Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
+//	Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made.You may do so in any reasonable manner, but not in any way that suggests 
 //				  the licensor endorses you or your use.
-//	Non Commercial — You may not use the material for commercial purposes.
-//	Share Alike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-//	No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+//	Non Commercial - You may not use the material for commercial purposes.
+//	Share Alike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+//	No additional restrictions - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 //
 //	Original Release:	V0.10:	June 5, 2016, Eric B. Olsen 
 //	
@@ -34,6 +34,13 @@
 //						V0.107: December 31, 2019, Modified print demo routine for future expansion.
 //						V0.200: January 31, 2020, Added an init function, console width function, print remainder function, and a function to validate the modulus
 
+
+#if defined(__linux__) && !defined(_WIN32)
+#include <inttypes.h>
+typedef int64_t __int64;
+#else
+
+#endif
 #include "stdafx.h"
 #include "stdio.h"
 #include "math.h"
@@ -63,7 +70,7 @@ using namespace std;
 //#define NUM_MODULUS_POWERS 8
 //#define CUSTOM_MODULUS 1
 // set the modulus values as shown below in this file:
-int modulus[18] =         {11,   5,  13,   3,   2,  17,   7,  19, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509};		// 2's power is fifth position
+int Modulus[18] =         {11,   5,  13,   3,   2,  17,   7,  19, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509};		// 2's power is fifth position
 const int ModPowers[18] = {2,    3,   2,   5,   8,   2,   3,  2,  1,   1,   1,   1,   1,   1,   1,   1,   1,   1 };
 
 
@@ -74,7 +81,7 @@ const int ModPowers[18] = {2,    3,   2,   5,   8,   2,   3,  2,  1,   1,   1,  
 //#define NUM_MODULUS_POWERS 8
 //#define CUSTOM_MODULUS 1
 // set the modulus values as shown below in this file:
-//int modulus[NUM_PPM_DIGS] = { 5, 2, 3, 262111, 262121, 262127, 262133, 262139};		// experiemental modulus for RNS TPU, Q=18
+//int Modulus[NUM_PPM_DIGS] = { 5, 2, 3, 262111, 262121, 262127, 262133, 262139};		// experiemental modulus for RNS TPU, Q=18
 //const int ModPowers[NUM_MODULUS_POWERS] = { 7, 17, 11, 1, 1, 1, 1, 1 };
 
 // ******************  RNS TPU Example Modulus with complete power based digits  ********************//
@@ -84,7 +91,7 @@ const int ModPowers[18] = {2,    3,   2,   5,   8,   2,   3,  2,  1,   1,   1,  
 //#define NUM_MODULUS_POWERS 8
 //#define CUSTOM_MODULUS 1
 // set the modulus values as shown below in this file:
-//int modulus[NUM_PPM_DIGS] = { 13, 2, 5, 17, 7, 19, 11, 3};		// an example 8 digit RNS set with power based, Q=18 bit digits
+//int Modulus[NUM_PPM_DIGS] = { 13, 2, 5, 17, 7, 19, 11, 3};		// an example 8 digit RNS set with power based, Q=18 bit digits
 //const int ModPowers[NUM_MODULUS_POWERS] = { 4, 16, 7, 4, 6, 4, 5, 11};
 
 
@@ -110,7 +117,7 @@ const int ModPowers_4[8] = { 7, 17, 11, 1, 1, 1, 1, 1 };
 
 //test modulus case 5
 // NUM_PMM_DIGS = 8
-int modulus_5[8] = { 5, 2, 4566554322454, 262111, 262121, 262127, 262133, 262139 };		// test for modulus value exceeding MAX_DIGIT
+int modulus_5[8] = { 5, 2, 2147483647, 262111, 262121, 262127, 262133, 262139 };		// test for modulus value exceeding MAX_DIGIT
 const int ModPowers_5[8] = { 7, 17, 11, 1, 1, 1, 1, 1 };
 
 //test modulus case 6

@@ -29,7 +29,7 @@
 // **************************** Set following appropriately to control how RNS Modulus are defined ************************************************* //
 
 //#define CUSTOM_MODULUS  0			// define as "0" for auto-generated RNS number format, otherwise define as "1" for user defined modulus
-									// for user defined modulus, Modulus values must be manually added to "modulus[]" array in "config.cpp"
+									// for user defined modulus, Modulus values must be manually added to "Modulus[]" array in "config.cpp"
 									// for user defined modulus, make sure to define the custom ModPowers[] array in "config.cpp", and set the NUM_MODULUS_POWERS defined below
 
 //#define NO_POWERS					// define NO_POWERS will produce a non-power based RNS system, otherwise, RNS system is power based
@@ -67,7 +67,7 @@
 #define NUM_PPM_COUNTERS	12									// this is the number of counters, it is not changeable.
 
 
-extern int modulus[18];
+extern int Modulus[18];
 extern const int ModPowers[18];	
 
 extern int modulus_1[18];
